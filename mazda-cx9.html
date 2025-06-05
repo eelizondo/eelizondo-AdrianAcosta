@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mazda CX-9 VDX | Adrian Acosta</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="top"></div>
+
+  <!-- Main container for sidebar and project content -->
+  <div class="container">
+    <!-- Sidebar with name, about, projects, and footer -->
+    <aside class="sidebar">
+      <div class="sidebar-content">
+        <!-- Name banner links to home -->
+        <div class="name-banner">
+          <a href="index.html" class="name-link" aria-label="Go to home">
+            <h1>ADRIAN<br>ACOSTA</h1>
+          </a>
+        </div>
+        <!-- About section -->
+        <section>
+          <h2>ABOUT</h2>
+          <p id="about">
+            <a href="about.html" data-project="about" class="hoverable-link">
+              Adrian Acosta &nbsp; | &nbsp; Designer
+            </a>
+          </p>
+        </section>
+        <!-- Projects section -->
+        <section>
+          <h2>PROJECTS</h2>
+          <ul>
+            <!-- Each project links to a page; current page is highlighted -->
+            <li id="cx9"><a href="mazda-cx9.html" class="hoverable-link active">Mazda CX-9 VDX</a></li>
+            <li id="online"><a href="mazda-online.html" class="hoverable-link">Mazda Online Advertising</a></li>
+            <li id="google"><a href="google.html" class="hoverable-link">Google Small Business</a></li>
+            <li id="bnp"><a href="bnp.html" class="hoverable-link">MazdaUSA.com B&P</a></li>
+            <li id="safety"><a href="safety.html" class="hoverable-link">2020 Top Safety Picks</a></li>
+            <li id="torres"><a href="torres.html" class="hoverable-link">Torres River Friends</a></li>
+            <li id="nyc"><a href="nyc.html" class="hoverable-link">NYC Photography</a></li>
+          </ul>
+        </section>
+      </div>
+      <!-- Footer with socials -->
+      <footer>
+        <div class="footer-content">
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+          <p class="copyright">© 2025 ADRIAN A.</p>
+        </div>
+      </footer>
+    </aside>
+
+    <!-- Main project content -->
+    <main class="project-page">
+      <!-- Project sections with images and captions -->
+      <section class="project-block">
+        <img src="assets/vdx-cover.webp" alt="Mazda CX-9 VDX Cover" />
+        <p class="image-caption">VDX (Video-Driven-Experience) In-Browser App</p>
+
+        <div class="project-text">
+          <h2 class="project-title">2021 MAZDA CX-9 VDX</h2>
+          <p class="project-role">ROLE: DIGITAL DESIGN, UX.</p>
+          <p class="project-description">
+            I teamed up with Epsilon and Garage Team Mazda to create an in-browser app spotlighting Mazda vehicles. I took on the task of refining the mobile user experience.<br />
+            My role specifically involved redesigning the VDX template, enhancing assets, crafting detailed redlines, and developing high-fidelity prototypes.
+          </p>
+        </div>
+      </section>
+
+      <section class="project-block">
+        <img src="assets/vdx-mobile.webp" alt="Mazda CX-9 VDX Mobile" />
+        <p class="image-caption">2021 Mazda CX-9 VDX – Mobile</p>
+      </section>
+
+      <section class="project-block">
+        <img src="assets/vdx-wireframes.webp" alt="Wireframes Redlining" />
+        <p class="image-caption">VDX Mobile Wireframe Redlining</p>
+      </section>
+
+      <section class="project-block">
+        <img src="assets/vdx-desktop.webp" alt="Desktop Experience" />
+        <p class="image-caption">VDX Desktop</p>
+      </section>
+
+      <section class="project-block">
+        <img src="assets/vdx-flow.webp" alt="Prototype Flow View" />
+        <p class="image-caption">Prototype Flow View (Adobe XD)</p>
+      </section>
+
+      <section class="project-block">
+        <img src="assets/vdx-prototype.webp" alt="Interactive Prototype" />
+        <p class="image-caption">>>> Interactive Prototype.</p>
+      </section>
+      
+      <!-- Scroll-to-top arrow -->
+      <a href="#top" class="back-to-top" aria-label="Back to top">
+        <img src="assets/arrow-up.png" alt="Back to top" />
+      </a>
+
+      <!-- Script for scroll-to-top arrow and sidebar hover -->
+      <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const backToTop = document.querySelector('.back-to-top');
+
+    // Show/hide scroll-to-top arrow on scroll
+    window.addEventListener('scroll', () => {
+      if (backToTop && window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else if (backToTop) {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    // Sidebar/project hover effect
+    document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
+      const targetId = link.getAttribute('data-project');
+      const listItem = document.getElementById(targetId);
+
+      if (listItem) {
+        link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
+        link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
+      }
+    });
+
+    // Fade in on first load
+    setTimeout(() => {
+      document.querySelector('.container').classList.add('loaded');
+    }, 100);
+
+    // Fade out before navigating to another page
+    document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        // Only fade out for internal links
+        if (this.href && this.href.indexOf(location.hostname) !== -1) {
+          e.preventDefault();
+          document.querySelector('.container').classList.remove('loaded');
+          setTimeout(() => {
+            window.location = this.href;
+          }, 400);
+        }
+      });
+    });
+  });
+</script>
+    </main>
+  </div>
+</body>
+</html>
