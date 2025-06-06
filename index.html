@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adrian Acosta | Designer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Mobile Header -->
+  <header class="mobile-header" style="display: none;">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo" />
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-btn">WORK</a>
+      <span class="nav-sep">|</span>
+      <a href="about.html" class="nav-btn">ABOUT</a>
+    </nav>
+  </header>
+
+  <!-- Mobile Gallery -->
+  <main class="mobile-gallery" style="display: none;">
+    <div class="mobile-image-block">
+      <img src="assets/image-m-1.webp" alt="Project 1" />
+    </div>
+    <div class="mobile-image-block">
+      <img src="assets/image-m-2.webp" alt="Project 2" />
+    </div>
+    <div class="mobile-image-block">
+      <img src="assets/image-m-2.webp" alt="Project 2" />
+    </div>
+    <div class="mobile-image-block">
+      <img src="assets/image-m-2.webp" alt="Project 2" />
+    </div>
+    <div class="mobile-image-block">
+      <img src="assets/image-m-2.webp" alt="Project 2" />
+    </div>
+    <div class="mobile-image-block">
+      <img src="assets/image-m-2.webp" alt="Project 2" />
+    </div>
+    <div class="mobile-image-block">
+      <img src="assets/image-m-2.webp" alt="Project 2" />
+    </div>
+    <!-- Add more image blocks as needed -->
+  </main>
+
+  <!-- Desktop Layout -->
+  <div class="container">
+    <!-- Sidebar with name, about, projects, and footer -->
+    <aside class="sidebar">
+      <div class="sidebar-content">
+        <!-- Name banner links to home -->
+        <div class="name-banner">
+          <a href="index.html" class="name-link" aria-label="Go to home">
+            <h1>ADRIAN<br>ACOSTA</h1>
+          </a>
+        </div>
+        <!-- About section -->
+        <section>
+          <h2>ABOUT</h2>
+          <p id="about">
+            <a href="about.html" data-project="about" class="hoverable-link">
+              Adrian Acosta &nbsp; | &nbsp; Designer
+            </a>
+          </p>
+        </section>
+        <!-- Projects section -->
+        <section>
+          <h2>PROJECTS</h2>
+          <ul>
+            <!-- Each project links to a page -->
+            <li id="cx9"><a href="mazda-cx9.html" class="hoverable-link">Mazda CX-9 VDX</a></li>
+            <li id="online"><a href="mazda-online.html" class="hoverable-link">Mazda Online Advertising</a></li>
+            <li id="google"><a href="google.html" class="hoverable-link">Google Small Business</a></li>
+            <li id="bnp"><a href="bnp.html" class="hoverable-link">MazdaUSA.com B&P</a></li>
+            <li id="safety"><a href="safety.html" class="hoverable-link">2020 Top Safety Picks</a></li>
+            <li id="torres"><a href="torres.html" class="hoverable-link">Torres River Friends</a></li>
+            <li id="nyc"><a href="nyc.html" class="hoverable-link">NYC Photography</a></li>
+          </ul>
+        </section>
+      </div>
+      <!-- Footer with socials -->
+      <footer>
+        <div class="footer-content">
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+          <p class="copyright">© 2025 ADRIAN A.</p>
+        </div>
+      </footer>
+    </aside>
+
+    <!-- Main gallery of project images -->
+    <main class="gallery">
+      <a href="mazda-cx9.html" data-project="cx9">
+        <img src="assets/image1.webp" alt="Mazda CX-9 VDX" />
+      </a>
+      <a href="mazda-online.html" data-project="online">
+        <img src="assets/image2.webp" alt="Mazda Online Advertising" />
+      </a>
+      <a href="google.html" data-project="google">
+        <img src="assets/image3.webp" alt="Google Small Business" />
+      </a>
+      <a href="bnp.html" data-project="bnp">
+        <img src="assets/image4.webp" alt="MazdaUSA.com B&P" />
+      </a>
+      <a href="safety.html" data-project="safety">
+        <img src="assets/image5.webp" alt="2020 Top Safety Picks" />
+      </a>
+      <a href="torres.html" data-project="torres">
+        <img src="assets/image6.webp" alt="Torres River Friends" />
+      </a>
+      <a href="nyc.html" data-project="nyc">
+        <img src="assets/image7.webp" alt="NYC Photography" />
+      </a>
+    </main>
+  </div>
+
+  <div style="height: 3rem;"></div>
+
+  <!-- Scroll-to-top arrow -->
+  <a href="#top" class="back-to-top" aria-label="Back to top">
+    <img src="assets/arrow-up.png" alt="Back to top" />
+  </a>
+
+  <!-- Script for scroll-to-top arrow and sidebar hover -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+
+      // Show/hide scroll-to-top arrow on scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      // Sidebar hover effect for gallery links
+      const links = document.querySelectorAll('.gallery a');
+      links.forEach(link => {
+        const targetId = link.getAttribute('data-project');
+        const listItem = document.getElementById(targetId);
+
+        if (listItem) {
+          link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
+          link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
+        }
+      });
+
+      // Fade in on first load
+      setTimeout(() => {
+        document.querySelector('.container').classList.add('loaded');
+      }, 100);
+
+      // Fade out before navigating to another page
+      document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          // Only fade out for internal links
+          if (this.href && this.href.indexOf(location.hostname) !== -1) {
+            e.preventDefault();
+            document.querySelector('.container').classList.remove('loaded');
+            setTimeout(() => {
+              window.location = this.href;
+            }, 400);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
