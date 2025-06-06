@@ -598,7 +598,7 @@ h3 {
   .back-to-top {
     position: fixed;
     left: 50%;
-    bottom: 9rem; /* Increased from 6.5rem to 9rem */
+    bottom: 7rem; /* Increased from 6.5rem to 9rem */
     transform: translateX(-50%);
     z-index: 1000;
     width: 56px;
