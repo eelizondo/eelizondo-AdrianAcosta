@@ -637,11 +637,15 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Add this line */
+    width: 100%;             /* Add this line for full width */
   }
   .mobile-footer .socials {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 0.5rem;
+    justify-content: center; /* Add this line to center icons */
+    width: 100%;             /* Add this line for full width */
   }
   .mobile-footer .socials a {
     color: #fff;
@@ -652,12 +656,13 @@ h3 {
     color: #aaa;
   }
   .mobile-footer .copyright {
-    color: #fff;
+    color: #b3b3b3;
     font-size: 1rem;
     text-align: center;
     margin: 0;
     letter-spacing: 0.1em;
     font-family: inherit;
+    width: 100%;             /* Add this line for full width */
   }
   /* Hide desktop footer on mobile */
   .sidebar footer {
