@@ -598,7 +598,7 @@ h3 {
   .back-to-top {
     position: fixed;
     left: 50%;
-    bottom: 2.5rem;
+    bottom: 9rem; /* Increased from 6.5rem to 9rem */
     transform: translateX(-50%);
     z-index: 1000;
     width: 56px;
@@ -621,10 +621,66 @@ h3 {
   }
 }
 
+@media (max-width: 768px) {
+  .mobile-footer {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    width: 100vw;
+    padding: 1.5rem 0 1rem 0;
+    position: relative;
+    z-index: 10;
+  }
+  .mobile-footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mobile-footer .socials {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .mobile-footer .socials a {
+    color: #fff;
+    font-size: 1.6rem;
+    transition: color 0.2s;
+  }
+  .mobile-footer .socials a:hover {
+    color: #aaa;
+  }
+  .mobile-footer .copyright {
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.1em;
+    font-family: inherit;
+  }
+  /* Hide desktop footer on mobile */
+  .sidebar footer {
+    display: none !important;
+  }
+  .mobile-gallery {
+    padding-bottom: 5rem; /* or more if needed */
+  }
+}
+
 html,
 body {
   background: #040404 !important;
 }
 .container {
   background-color: #040404 !important;
+}
+
+@media (max-width: 700px) {
+  body,
+  .mobile-header,
+  .mobile-gallery,
+  .mobile-footer {
+    background: #040404 !important;
+  }
 }
