@@ -688,4 +688,11 @@ body {
   .mobile-footer {
     background: #040404 !important;
   }
+  .mobile-gallery {
+    display: flex !important;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    align-items: center; /* Center gallery items horizontally */
+  }
 }
