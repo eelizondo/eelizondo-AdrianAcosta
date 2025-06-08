@@ -158,5 +158,44 @@
       <a href="about.html" class="nav-btn">ABOUT</a>
     </nav>
   </header>
+
+  <!-- Mobile Footer -->
+  <footer class="mobile-footer">
+    <div class="footer-content">
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="copyright">© 2025 ADRIAN A.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top arrow -->
+  <a href="#top" class="back-to-top" aria-label="Back to top">
+    <img src="assets/arrow-up.png" alt="Back to top" />
+  </a>
+
+  <!-- Show/hide scroll-to-top arrow on scroll -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTops = document.querySelectorAll('.back-to-top');
+      window.addEventListener('scroll', function () {
+        backToTops.forEach(function(backToTop) {
+          if (window.scrollY > 300) {
+            backToTop.classList.add('visible');
+          } else {
+            backToTop.classList.remove('visible');
+          }
+        });
+      });
+      backToTops.forEach(function(backToTop) {
+        backToTop.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
