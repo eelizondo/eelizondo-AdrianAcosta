@@ -723,3 +723,83 @@ body {
     margin: 0 auto;
   }
 }
+
+@media (max-width: 700px) {
+  .container {
+    display: none !important;
+  }
+  .about-mobile {
+    display: block !important;
+  }
+}
+@media (min-width: 701px) {
+  .about-mobile {
+    display: none !important;
+  }
+}
+@media (max-width: 700px) {
+  .about-mobile {
+    display: block !important;
+    padding: 2rem 1rem 0 1rem;
+    text-align: center;
+  }
+  .about-mobile .about-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-mobile .about-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 2rem auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    display: block;
+  }
+  .about-mobile .about-text {
+    max-width: 400px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+  .about-mobile .about-text h2 {
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .about-mobile .about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #ccc;
+  }
+  .about-mobile .download-resume {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #fff;
+    text-decoration: underline;
+    font-size: 1.1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .about-mobile .download-resume:hover {
+    color: #b3b3b3;
+  }
+  .mobile-footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .mobile-footer .socials {
+    margin-bottom: 1rem;
+  }
+}
