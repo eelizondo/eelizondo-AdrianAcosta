@@ -714,9 +714,10 @@ body {
     width: 100%;
   }
   .mobile-logo img {
+    display: block;
+    margin: 0 auto;
     max-width: 120px;
     height: auto;
-    display: block;
   }
   .mobile-header .logo {
     display: none !important;
