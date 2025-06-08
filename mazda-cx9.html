@@ -115,44 +115,20 @@
       <!-- Script for scroll-to-top arrow and sidebar hover -->
       <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const backToTop = document.querySelector('.back-to-top');
-
-    // Show/hide scroll-to-top arrow on scroll
-    window.addEventListener('scroll', () => {
-      if (backToTop && window.scrollY > 300) {
-        backToTop.classList.add('visible');
-      } else if (backToTop) {
-        backToTop.classList.remove('visible');
-      }
-    });
-
-    // Sidebar/project hover effect
-    document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
-      const targetId = link.getAttribute('data-project');
-      const listItem = document.getElementById(targetId);
-
-      if (listItem) {
-        link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
-        link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
-      }
-    });
-
-    // Fade in on first load
-    setTimeout(() => {
-      document.querySelector('.container').classList.add('loaded');
-    }, 100);
-
-    // Fade out before navigating to another page
-    document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
-      link.addEventListener('click', function (e) {
-        // Only fade out for internal links
-        if (this.href && this.href.indexOf(location.hostname) !== -1) {
-          e.preventDefault();
-          document.querySelector('.container').classList.remove('loaded');
-          setTimeout(() => {
-            window.location = this.href;
-          }, 400);
+    const backToTops = document.querySelectorAll('.back-to-top');
+    window.addEventListener('scroll', function () {
+      backToTops.forEach(function(backToTop) {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
         }
+      });
+    });
+    backToTops.forEach(function(backToTop) {
+      backToTop.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
   });
@@ -212,6 +188,11 @@
   </section>
 </main>
 
+<!-- Scroll-to-top arrow -->
+<a href="#top" class="back-to-top" aria-label="Back to top">
+  <img src="assets/arrow-up.png" alt="Back to top" />
+</a>
+
 <!-- Mobile Footer -->
 <footer class="mobile-footer">
   <div class="footer-content">
@@ -232,24 +213,26 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const backToTop = document.querySelector('.back-to-top');
+    const backToTops = document.querySelectorAll('.back-to-top');
 
     // Show/hide scroll-to-top arrow on scroll
     window.addEventListener('scroll', () => {
-      if (backToTop && window.scrollY > 300) {
-        backToTop.classList.add('visible');
-      } else if (backToTop) {
-        backToTop.classList.remove('visible');
-      }
+      backToTops.forEach(function(backToTop) {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
     });
 
     // Smooth scroll to top
-    if (backToTop) {
+    backToTops.forEach(function(backToTop) {
       backToTop.addEventListener('click', function (e) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
-    }
+    });
   });
 </script>
 </body>
