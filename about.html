@@ -11,42 +11,7 @@
 <body>
   <div id="top"></div>
 
-  <!-- Mobile Logo on Top -->
-  <div class="mobile-logo" style="display: none;">
-    <img src="assets/logo.png" alt="Logo" />
-  </div>
-
-  <!-- Mobile Header -->
-  <header class="mobile-header" style="display: none;">
-    <nav class="mobile-nav">
-      <a href="index.html" class="nav-btn">WORK</a>
-      <span class="nav-sep">|</span>
-      <a href="about.html" class="nav-btn">ABOUT</a>
-    </nav>
-  </header>
-
-  <!-- Mobile About Section -->
-  <main class="about-mobile">
-    <section class="about-intro">
-      <img src="assets/adrian-photo.webp" alt="Adrian Acosta portrait" class="about-photo"/>
-      <div class="about-text">
-        <h2>ABOUT ADRIAN ACOSTA</h2>
-        <p>
-          Interdisciplinary designer with extensive experience in fast-paced digital advertising.<br>
-          A fusion in Graphic Design, Art and IT Engineering backgrounds fuel a creative and analytical approach, transforming intricate business needs into captivating visual stories that resonate with audiences and drive results.
-        </p>
-        <p>
-          <a href="assets/Adrian Acosta - Resume.pdf" class="download-resume" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-            <span style="text-decoration:none;">&gt; &gt; &gt;</span>
-            <span style="text-decoration:underline; font-weight:700; margin: 0 0.5em;">DOWNLOAD RESUME</span>
-            <span style="text-decoration:none;">&lt; &lt; &lt;</span>
-          </a>
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <!-- Main container for sidebar and about content (desktop) -->
+  <!-- Main container for sidebar and about content -->
   <div class="container">
     <!-- Sidebar with name, about, projects, and footer -->
     <aside class="sidebar">
@@ -85,15 +50,9 @@
       <footer>
         <div class="footer-content">
           <div class="socials">
-            <a href="https://www.linkedin.com/in/aacostagcr/" aria-label="LinkedIn" target="_blank" rel="noopener">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://www.instagram.com/onesneakybug/" aria-label="Instagram" target="_blank" rel="noopener">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="mailto:aacostagcr@email.com" aria-label="Email" target="_blank" rel="noopener">
-              <i class="fas fa-envelope"></i>
-            </a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
           <p class="copyright">© 2025 ADRIAN A.</p>
         </div>
@@ -143,6 +102,41 @@
     </main>
   </div>
 
+  <!-- Mobile Logo on Top -->
+  <div class="mobile-logo" style="display: none;">
+    <img src="assets/logo.png" alt="Logo" />
+  </div>
+
+  <!-- Mobile Header -->
+  <header class="mobile-header" style="display: none;">
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-btn">WORK</a>
+      <span class="nav-sep">|</span>
+      <a href="about.html" class="nav-btn">ABOUT</a>
+    </nav>
+  </header>
+
+  <!-- Mobile About Section -->
+  <main class="about-mobile">
+    <section class="about-intro">
+      <img src="assets/adrian-photo.webp" alt="Adrian Acosta portrait" class="about-photo"/>
+      <div class="about-text">
+        <h2>ABOUT ADRIAN ACOSTA</h2>
+        <p>
+          Interdisciplinary designer with extensive experience in fast-paced digital advertising.<br>
+          A fusion in Graphic Design, Art and IT Engineering backgrounds fuel a creative and analytical approach, transforming intricate business needs into captivating visual stories that resonate with audiences and drive results.
+        </p>
+        <p>
+          <a href="assets/Adrian Acosta - Resume.pdf" class="download-resume" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <span style="text-decoration:none;">&gt; &gt; &gt;</span>
+            <span style="text-decoration:underline; font-weight:700; margin: 0 0.5em;">DOWNLOAD RESUME</span>
+            <span style="text-decoration:none;">&lt; &lt; &lt;</span>
+          </a>
+        </p>
+      </div>
+    </section>
+  </main>
+
   <!-- Mobile Footer -->
   <footer class="mobile-footer">
     <div class="footer-content">
@@ -164,21 +158,44 @@
   <!-- Script for scroll-to-top arrow, fade-in/out, and sidebar hover -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const backToTops = document.querySelectorAll('.back-to-top');
-      window.addEventListener('scroll', function () {
-        backToTops.forEach(function(backToTop) {
-          if (window.scrollY > 300) {
-            backToTop.classList.add('visible');
-          } else {
-            backToTop.classList.remove('visible');
+      const backToTop = document.querySelector('.back-to-top');
+
+      // Show/hide scroll-to-top arrow on scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      // Fade-in animation for main container
+      setTimeout(() => {
+        document.querySelector('.container').classList.add('loaded');
+      }, 100);
+
+      // Fade-out before navigating to another page (includes .name-link)
+      document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          if (this.href && this.href.indexOf(location.hostname) !== -1) {
+            e.preventDefault();
+            document.querySelector('.container').classList.remove('loaded');
+            setTimeout(() => {
+              window.location = this.href;
+            }, 400);
           }
         });
       });
-      backToTops.forEach(function(backToTop) {
-        backToTop.addEventListener('click', function (e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+
+      // Sidebar/project hover effect
+      document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
+        const targetId = link.getAttribute('data-project');
+        const listItem = document.getElementById(targetId);
+
+        if (listItem) {
+          link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
+          link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
+        }
       });
     });
   </script>
