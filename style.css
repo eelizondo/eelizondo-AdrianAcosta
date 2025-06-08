@@ -475,19 +475,21 @@ figcaption {
 
 .video-row {
   display: flex;
-  gap: 0.75rem; /* Reduced gap */
-  justify-content: flex-start; /* Align banners with text */
+  gap: 0.5rem;
+  justify-content: center;
   align-items: flex-start;
   margin-bottom: 1.5rem;
 }
 
 .video-row video {
-  width: 100%;
-  max-width: 220px; /* Reduced from 320px */
-  border-radius: 0;
-  background: #000;
-  box-shadow: none;
-  object-fit: contain;
+  width: 32vw;      /* 3 videos fit in one row with some gap */
+  max-width: 110px; /* Prevents them from being too large on tablets */
+  min-width: 80px;  /* Optional: keeps them visible on very small screens */
+  height: 180px;    /* Adjust as needed for your aspect ratio */
+  object-fit: cover;
+  border-radius: 10px;
+  background: #111;
+  display: block;
 }
 
 @media (max-width: 1100px) {
@@ -864,5 +866,21 @@ body {
     border-radius: 16px;
     display: block;
     margin: 0 0 1.2rem 0;
+  }
+}
+
+/* Force videos to stay in a row on all screens */
+@media (max-width: 700px) {
+  .video-row {
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .video-row video {
+    width: 32vw;
+    max-width: 110px;
+    min-width: 80px;
+    height: 180px;
   }
 }
