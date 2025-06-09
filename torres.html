@@ -13,18 +13,13 @@
 
   <!-- Main container for sidebar and project content -->
   <div class="container">
-
-    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-content">
-        <!-- Name banner links to home -->
         <div class="name-banner">
           <a href="index.html" class="name-link" aria-label="Go to home">
             <h1>ADRIAN<br>ACOSTA</h1>
           </a>
         </div>
-
-        <!-- About section -->
         <section>
           <h2>ABOUT</h2>
           <p id="about">
@@ -33,12 +28,9 @@
             </a>
           </p>
         </section>
-
-        <!-- Projects section -->
         <section>
           <h2>PROJECTS</h2>
           <ul>
-            <!-- Each project links to a page; current page is highlighted -->
             <li id="cx9"><a href="mazda-cx9.html" class="hoverable-link">Mazda CX-9 VDX</a></li>
             <li id="online"><a href="mazda-online.html" class="hoverable-link">Mazda Online Advertising</a></li>
             <li id="google"><a href="google.html" class="hoverable-link">Google Small Business</a></li>
@@ -49,8 +41,6 @@
           </ul>
         </section>
       </div>
-
-      <!-- Footer with socials -->
       <footer>
         <div class="footer-content">
           <div class="socials">
@@ -63,16 +53,11 @@
       </footer>
     </aside>
 
-    <!-- Main Content -->
+    <!-- Main Content (desktop) -->
     <main class="project-page">
-
-      <!-- Hero Image -->
       <section class="project-block">
-        <figure>
-          <img src="assets/branding-material-1.webp" alt="Torres River Friends Branding Notebook" />
-          <figcaption class="image-caption">BRANDING MATERIAL</figcaption>
-        </figure>
-
+        <img src="assets/branding-material-1.webp" alt="Torres River Friends Branding Notebook" />
+        <p class="image-caption">BRANDING MATERIAL</p>
         <div class="project-text">
           <h2 class="project-title">TORRES RIVER FRIENDS</h2>
           <p class="project-role">ROLE: ART DIRECTION, ILLUSTRATION</p>
@@ -83,8 +68,6 @@
           </p>
         </div>
       </section>
-
-      <!-- Logo Evolution -->
       <section class="project-block">
         <div class="project-image-pair">
           <img src="assets/logo-original.webp" alt="Original Logo Concept" />
@@ -97,44 +80,25 @@
           </p>
         </div>
       </section>
-
-      <!-- Secondary Branding Shots -->
       <section class="project-block">
-        <figure>
-          <img src="assets/branding-material-2.webp" alt="Sticker Branding Material" />
-        </figure>
+        <img src="assets/branding-material-2.webp" alt="Sticker Branding Material" />
       </section>
-
       <section class="project-block">
-        <figure>
-          <img src="assets/branding-material-3.webp" alt="Digital Branding Presentation" />
-          <figcaption class="image-caption">BRANDING MATERIAL</figcaption>        
-        </figure>
+        <img src="assets/branding-material-3.webp" alt="Digital Branding Presentation" />
+        <p class="image-caption">BRANDING MATERIAL</p>
       </section>
-
       <section class="project-block">
-        <figure>
-          <img src="assets/banner-design.webp" alt="Website Banner Design" />
-          <figcaption class="image-caption">WEBSITE & MOBILE CONCEPT</figcaption>
-        </figure>
+        <img src="assets/banner-design.webp" alt="Website Banner Design" />
+        <p class="image-caption">WEBSITE & MOBILE CONCEPT</p>
       </section>
-
-      <!-- Unused Concept Art -->
       <section class="project-block">
-        <figure>
-          <img src="assets/concept.webp" alt="Website Banner Design" />
-          <figcaption class="image-caption">UNUSED CONCEPT ART</figcaption>
-        </figure>
+        <img src="assets/concept.webp" alt="Website Banner Design" />
+        <p class="image-caption">UNUSED CONCEPT ART</p>
       </section>
-
-      <!-- Promo Applications -->
       <section class="project-block">
-        <figure>
-          <img src="assets/mobile-mockup.webp" alt="Mascot Mockup on Phone" />
-          <figcaption class="image-caption">MOBILE PROMO MOCKUP</figcaption>
-        </figure>
+        <img src="assets/mobile-mockup.webp" alt="Mascot Mockup on Phone" />
+        <p class="image-caption">MOBILE PROMO MOCKUP</p>
       </section>
-
       <section class="project-block">
         <div class="project-image-pair">
           <img src="assets/pin-backpack.webp" alt="Mascot Pin on Backpack" />
@@ -142,72 +106,142 @@
         </div>
         <p class="image-caption">BRAND APPLICATION – PIN & T-SHIRT</p>
       </section>
-
-      <!-- Scroll-to-top arrow -->
-      <a href="#top" class="back-to-top" aria-label="Back to top">
-        <img src="assets/arrow-up.png" alt="Back to top" />
-      </a>
-
-      <!-- Script for scroll-to-top arrow and sidebar hover -->
-      <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const backToTop = document.querySelector('.back-to-top');
-
-    // Show/hide scroll-to-top arrow on scroll
-    window.addEventListener('scroll', () => {
-      if (backToTop && window.scrollY > 300) {
-        backToTop.classList.add('visible');
-      } else if (backToTop) {
-        backToTop.classList.remove('visible');
-      }
-    });
-
-    // Sidebar/project hover effect
-    document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
-      const targetId = link.getAttribute('data-project');
-      const listItem = document.getElementById(targetId);
-
-      if (listItem) {
-        link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
-        link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
-      }
-    });
-
-    // Fade in on first load
-    setTimeout(() => {
-      document.querySelector('.container').classList.add('loaded');
-    }, 100);
-
-    // Fade out before navigating to another page
-    document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
-      link.addEventListener('click', function (e) {
-        // Only fade out for internal links
-        if (this.href && this.href.indexOf(location.hostname) !== -1) {
-          e.preventDefault();
-          document.querySelector('.container').classList.remove('loaded');
-          setTimeout(() => {
-            window.location = this.href;
-          }, 400);
-        }
-      });
-    });
-  });
-</script>
     </main>
   </div>
 
   <!-- Mobile Logo on Top -->
-<div class="mobile-logo" style="display: none;">
-  <img src="assets/logo.png" alt="Logo" />
-</div>
+  <div class="mobile-logo">
+    <img src="assets/logo.png" alt="Logo" />
+  </div>
 
-<!-- Mobile Header -->
-<header class="mobile-header" style="display: none;">
-  <nav class="mobile-nav">
-    <a href="index.html" class="nav-btn">WORK</a>
-    <span class="nav-sep">|</span>
-    <a href="about.html" class="nav-btn">ABOUT</a>
-  </nav>
-</header>
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-btn">WORK</a>
+      <span class="nav-sep">|</span>
+      <a href="about.html" class="nav-btn">ABOUT</a>
+    </nav>
+  </header>
+
+  <!-- Mobile Project Content -->
+  <main class="project-mobile">
+    <section class="project-block">
+      <img src="assets/branding-material-1.webp" alt="Torres River Friends Branding Notebook" class="project-photo" />
+      <p class="image-caption">BRANDING MATERIAL</p>
+      <div class="project-text" style="text-align: left; max-width: 700px; margin: 2.75rem auto 0 auto;">
+        <h2 class="project-title" style="margin-bottom: 0.25rem;">TORRES RIVER FRIENDS</h2>
+        <p class="project-role" style="margin-bottom: 1.25rem;">ROLE: ART DIRECTION, ILLUSTRATION</p>
+        <p class="project-description" style="color: #ddd; line-height: 1.8;">
+          I worked with Torres River Friends, a community-supported nonprofit focused on protecting the Torres River in San José, Costa Rica. Our goal was to design a mascot that would boost the organization's brand identity and connect with both loyal members and young enthusiasts.<br /><br />
+          My role was to create a distinctive mascot brand design. This included developing the character’s unique identity, illustrating it, and establishing a consistent style across all branding materials.
+        </p>
+      </div>
+    </section>
+    <section class="project-block">
+      <div class="project-image-pair">
+        <img src="assets/logo-original.webp" alt="Original Logo Concept" class="project-photo" />
+        <img src="assets/logo-evolution.webp" alt="Final Mascot Logo" class="project-photo" />
+      </div>
+      <div class="project-text" style="text-align: left; max-width: 700px; margin: 2.75rem auto 0 auto;">
+        <h3 class="subsection-title">THE LOGO AND MASCOT EVOLUTION</h3>
+        <p>
+          The logo, featuring a charming character embracing a valuable water droplet, set the foundation and became a key visual in developing the brand mascot. For the mascot, we explored several design options, ultimately deciding to retain the smiley face and minimalistic style from the original logo.
+        </p>
+      </div>
+    </section>
+    <section class="project-block">
+      <img src="assets/branding-material-2.webp" alt="Sticker Branding Material" class="project-photo" />
+    </section>
+    <section class="project-block">
+      <img src="assets/branding-material-3.webp" alt="Digital Branding Presentation" class="project-photo" />
+      <p class="image-caption">BRANDING MATERIAL</p>
+    </section>
+    <section class="project-block">
+      <img src="assets/banner-design.webp" alt="Website Banner Design" class="project-photo" />
+      <p class="image-caption">WEBSITE & MOBILE CONCEPT</p>
+    </section>
+    <section class="project-block">
+      <img src="assets/concept.webp" alt="Website Banner Design" class="project-photo" />
+      <p class="image-caption">UNUSED CONCEPT ART</p>
+    </section>
+    <section class="project-block">
+      <img src="assets/mobile-mockup.webp" alt="Mascot Mockup on Phone" class="project-photo" />
+      <p class="image-caption">MOBILE PROMO MOCKUP</p>
+    </section>
+    <section class="project-block">
+      <div class="project-image-pair">
+        <img src="assets/pin-backpack.webp" alt="Mascot Pin on Backpack" class="project-photo" />
+        <img src="assets/shirt-umbrella.webp" alt="Mascot Shirt Mockup" class="project-photo" />
+      </div>
+      <p class="image-caption">BRAND APPLICATION – PIN & T-SHIRT</p>
+    </section>
+  </main>
+
+  <!-- Scroll-to-top arrow for both desktop and mobile -->
+  <a href="#top" class="back-to-top" aria-label="Back to top">
+    <img src="assets/arrow-up.png" alt="Back to top" />
+  </a>
+
+  <!-- Mobile Footer -->
+  <footer class="mobile-footer">
+    <div class="footer-content">
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="copyright">© 2025 ADRIAN A.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+
+      // Show/hide scroll-to-top arrow on scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      // Smooth scroll to top
+      backToTop.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Fade-in animation for main container
+      setTimeout(() => {
+        document.querySelector('.container').classList.add('loaded');
+      }, 100);
+
+      // Fade-out before navigating to another page
+      document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          if (this.href && this.href.indexOf(location.hostname) !== -1) {
+            e.preventDefault();
+            document.querySelector('.container').classList.remove('loaded');
+            setTimeout(() => {
+              window.location = this.href;
+            }, 400);
+          }
+        });
+      });
+
+      // Sidebar/project hover effect
+      document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
+        const targetId = link.getAttribute('data-project');
+        const listItem = document.getElementById(targetId);
+
+        if (listItem) {
+          link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
+          link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
+        }
+      });
+    });
+  </script>
 </body>
 </html>
