@@ -9,34 +9,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Mobile Logo on Top -->
-  <div class="mobile-logo" style="display: none;">
-    <img src="assets/logo.png" alt="Logo" />
-  </div>
-
-  <!-- Mobile Header -->
-  <header class="mobile-header" style="display: none;">
-    <nav class="mobile-nav">
-      <a href="index.html" class="nav-btn">WORK</a>
-      <span class="nav-sep">|</span>
-      <a href="about.html" class="nav-btn">ABOUT</a>
-    </nav>
-  </header>
-
   <div id="top"></div>
 
   <!-- Main container for sidebar and project content -->
   <div class="container">
-    <!-- Sidebar with name, about, projects, and footer -->
     <aside class="sidebar">
       <div class="sidebar-content">
-        <!-- Name banner links to home -->
         <div class="name-banner">
           <a href="index.html" class="name-link" aria-label="Go to home">
             <h1>ADRIAN<br>ACOSTA</h1>
           </a>
         </div>
-        <!-- About section -->
         <section>
           <h2>ABOUT</h2>
           <p id="about">
@@ -45,22 +28,19 @@
             </a>
           </p>
         </section>
-        <!-- Projects section -->
         <section>
           <h2>PROJECTS</h2>
           <ul>
-            <!-- Each project links to a page; current page is highlighted -->
-            <li><a href="mazda-cx9.html" class="hoverable-link">Mazda CX-9 VDX</a></li>
-            <li><a href="mazda-online.html" class="hoverable-link">Mazda Online Advertising</a></li>
-            <li><a href="google.html" class="hoverable-link">Google Small Business</a></li>
-            <li><a href="bnp.html" class="hoverable-link">MazdaUSA.com B&P</a></li>
-            <li><a href="safety.html" class="hoverable-link">2020 Top Safety Picks</a></li>
-            <li><a href="torres.html" class="hoverable-link">Torres River Friends</a></li>
+            <li id="cx9"><a href="mazda-cx9.html" class="hoverable-link">Mazda CX-9 VDX</a></li>
+            <li id="online"><a href="mazda-online.html" class="hoverable-link">Mazda Online Advertising</a></li>
+            <li id="google"><a href="google.html" class="hoverable-link">Google Small Business</a></li>
+            <li id="bnp"><a href="bnp.html" class="hoverable-link">MazdaUSA.com B&P</a></li>
+            <li id="safety"><a href="safety.html" class="hoverable-link">2020 Top Safety Picks</a></li>
+            <li id="torres"><a href="torres.html" class="hoverable-link">Torres River Friends</a></li>
             <li id="nyc"><a href="nyc.html" class="hoverable-link active">NYC Photography</a></li>
           </ul>
         </section>
       </div>
-      <!-- Footer with socials -->
       <footer>
         <div class="footer-content">
           <div class="socials">
@@ -73,7 +53,7 @@
       </footer>
     </aside>
 
-    <!-- Main project content -->
+    <!-- Main project content (desktop) -->
     <main class="project-page">
       <!-- Hero Section -->
       <section class="project-block">
@@ -123,58 +103,128 @@
         <img src="assets/nyc-central-park3.webp" alt="Central Park Winter 2022" />
         <p class="image-caption">Central Park, Winter 2022.</p>
       </section>
+    </main>
+  </div>
 
-      <!-- Scroll-to-top arrow -->
-      <a href="#top" class="back-to-top" aria-label="Back to top">
-        <img src="assets/arrow-up.png" alt="Back to top" />
-      </a>
+  <!-- Mobile Logo on Top -->
+  <div class="mobile-logo">
+    <img src="assets/logo.png" alt="Logo" />
+  </div>
 
-      <!-- Script for scroll-to-top arrow and sidebar hover -->
-      <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const backToTop = document.querySelector('.back-to-top');
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-btn">WORK</a>
+      <span class="nav-sep">|</span>
+      <a href="about.html" class="nav-btn">ABOUT</a>
+    </nav>
+  </header>
 
-    // Show/hide scroll-to-top arrow on scroll
-    window.addEventListener('scroll', () => {
-      if (backToTop && window.scrollY > 300) {
-        backToTop.classList.add('visible');
-      } else if (backToTop) {
-        backToTop.classList.remove('visible');
-      }
-    });
+  <!-- Mobile Project Content -->
+  <main class="project-mobile">
+    <section class="project-block">
+      <img src="assets/nyc-hero.webp" alt="Central Park NYC Spring" class="project-photo" />
+      <p class="image-caption">CENTRAL PARK · NYC · SPRING</p>
+      <div class="project-text" style="text-align: left; max-width: 700px; margin: 2.75rem auto 0 auto;">
+        <h2 class="project-title" style="margin-bottom: 0.25rem;">NYC NEIGHBORHOODS & PARKS</h2>
+        <p class="project-role" style="margin-bottom: 1.25rem;">ROLE: PHOTOGRAPHY, CREATIVE</p>
+        <p class="project-description" style="color: #ddd; line-height: 1.8;">
+          Photography unlocks a world of inspiration by seeing fleeting moments that might otherwise go unnoticed. In this collection, I explore hidden beauty in everyday views, capturing new perspectives and city energy. Rather than mere documentation or nostalgia, photography presents parks and cityscapes as living canvases, and a story through the lens.<br><br>
+          This ongoing project represents a personal exploration of New York City, where each image captures a world, often frozen in stillness but powered by the life that always pulses just beyond the frame. These city moments—where culture and form blend—can spark thought and affirmation. Inspired by street photography, mixed with the softness of clean design, each photograph offers a unique glimpse of the artist’s vision, encouraging audiences to form a deeper connection with this timeless city, thereby enriching their experience and instilling a lasting impression.
+        </p>
+      </div>
+    </section>
+    <section class="project-block">
+      <h3 class="section-title">FEATURED PHOTOGRAPHY</h3>
+      <hr class="section-divider" />
+      <img src="assets/nyc-chinatown1.webp" alt="Chinatown, Summer 2020" class="project-photo" />
+      <img src="assets/nyc-chinatown2.webp" alt="Chinatown, Summer 2020" class="project-photo" />
+      <img src="assets/nyc-chinatown3.webp" alt="Chinatown, Summer 2020" class="project-photo" />
+      <p class="image-caption">Chinatown, Summer 2020.</p>
+      <hr class="section-divider" aria-hidden="true" />
+      <img src="assets/nyc-union-square1.webp" alt="Union Square Fall 2021" class="project-photo" />
+      <img src="assets/nyc-union-square2.webp" alt="Union Square Fall 2021" class="project-photo" />
+      <img src="assets/nyc-union-square3.webp" alt="Union Square Fall 2021" class="project-photo" />
+      <p class="image-caption">Union Square, Fall 2021.</p>
+      <hr class="section-divider" aria-hidden="true" />
+      <img src="assets/nyc-times-square1.webp" alt="Times Square Spring 2022" class="project-photo" />
+      <img src="assets/nyc-times-square2.webp" alt="Times Square Spring 2022" class="project-photo" />
+      <img src="assets/nyc-times-square3.webp" alt="Times Square Spring 2022" class="project-photo" />
+      <p class="image-caption">Times Square, Spring 2022.</p>
+      <hr class="section-divider" aria-hidden="true" />
+      <img src="assets/nyc-central-park1.webp" alt="Central Park Winter 2022" class="project-photo" />
+      <img src="assets/nyc-central-park2.webp" alt="Central Park Winter 2022" class="project-photo" />
+      <img src="assets/nyc-central-park3.webp" alt="Central Park Winter 2022" class="project-photo" />
+      <p class="image-caption">Central Park, Winter 2022.</p>
+    </section>
+  </main>
 
-    // Sidebar/project hover effect
-    document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
-      const targetId = link.getAttribute('data-project');
-      const listItem = document.getElementById(targetId);
+  <!-- Scroll-to-top arrow for both desktop and mobile -->
+  <a href="#top" class="back-to-top" aria-label="Back to top">
+    <img src="assets/arrow-up.png" alt="Back to top" />
+  </a>
 
-      if (listItem) {
-        link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
-        link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
-      }
-    });
+  <!-- Mobile Footer -->
+  <footer class="mobile-footer">
+    <div class="footer-content">
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="copyright">© 2025 ADRIAN A.</p>
+    </div>
+  </footer>
 
-    // Fade in on first load
-    setTimeout(() => {
-      document.querySelector('.container').classList.add('loaded');
-    }, 100);
+  <!-- Script for scroll-to-top arrow and sidebar hover -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
 
-    // Fade out before navigating to another page
-    document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
-      link.addEventListener('click', function (e) {
-        // Only fade out for internal links
-        if (this.href && this.href.indexOf(location.hostname) !== -1) {
-          e.preventDefault();
-          document.querySelector('.container').classList.remove('loaded');
-          setTimeout(() => {
-            window.location = this.href;
-          }, 400);
+      // Show/hide scroll-to-top arrow on scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      // Smooth scroll to top
+      backToTop.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Fade-in animation for main container
+      setTimeout(() => {
+        document.querySelector('.container').classList.add('loaded');
+      }, 100);
+
+      // Fade-out before navigating to another page
+      document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          if (this.href && this.href.indexOf(location.hostname) !== -1) {
+            e.preventDefault();
+            document.querySelector('.container').classList.remove('loaded');
+            setTimeout(() => {
+              window.location = this.href;
+            }, 400);
+          }
+        });
+      });
+
+      // Sidebar/project hover effect
+      document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
+        const targetId = link.getAttribute('data-project');
+        const listItem = document.getElementById(targetId);
+
+        if (listItem) {
+          link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
+          link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
         }
       });
     });
-  });
-</script>
-    </main>
-  </div>
+  </script>
 </body>
 </html>
