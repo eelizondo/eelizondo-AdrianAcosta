@@ -13,30 +13,22 @@
 
   <!-- Main container for sidebar and project content -->
   <div class="container">
-
-    <!-- Sidebar with name, about, projects, and footer -->
     <aside class="sidebar">
       <div class="sidebar-content">
-        <!-- Name banner links to home -->
         <div class="name-banner">
           <a href="index.html" class="name-link" aria-label="Go to home">
             <h1>ADRIAN<br>ACOSTA</h1>
           </a>
         </div>
-
-        <!-- About section -->
         <section>
           <h2>ABOUT</h2>
           <p id="about">
             <a href="about.html" data-project="about" class="hoverable-link">Adrian Acosta &nbsp; | &nbsp; Designer</a>
           </p>
         </section>
-
-        <!-- Projects section -->
         <section>
           <h2>PROJECTS</h2>
           <ul>
-            <!-- Each project links to a page; current page is highlighted -->            
             <li id="cx9"><a href="mazda-cx9.html" class="hoverable-link">Mazda CX-9 VDX</a></li>
             <li id="online"><a href="mazda-online.html" class="hoverable-link">Mazda Online Advertising</a></li>
             <li id="google"><a href="google.html" class="hoverable-link">Google Small Business</a></li>
@@ -47,8 +39,6 @@
           </ul>
         </section>
       </div>
-
-      <!-- Footer with socials -->
       <footer>
         <div class="footer-content">
           <div class="socials">
@@ -61,104 +51,134 @@
       </footer>
     </aside>
 
-    <!-- Main project content -->
+    <!-- Main project content (desktop) -->
     <main class="project-page">
-
-      <!-- Project sections with images and captions -->
       <section class="project-block">
-        <figure>
-          <div class="video-row">
+        <div class="video-row">
           <video src="assets/cx30-safety-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
           <video src="assets/cx30-safety-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
           <video src="assets/cx30-safety-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
         </div>
-          <figcaption class="image-caption">2020 MAZDA CX-30 TOP SAFETY DYNAMIC BANNER</figcaption>
-        </figure>
-
+        <p class="image-caption">2020 MAZDA CX-30 TOP SAFETY DYNAMIC BANNER</p>
         <div class="project-text">
           <h2 class="project-title">2020 MAZDA TOP SAFETY PICKS</h2>
           <p class="project-role">ROLE: CREATIVE, DIGITAL DESIGN</p>
           <p class="project-description">
-            I was involved in a campaign celebrating the 2020 CX-3, CX-5, Mazda6, and Mazda3 models, which were all named Top Safety Pick+ by the IIHS. The goal was to highlight Mazda’s award-winning safety features and bring them to a broader audience.
-            <br /><br />
+            I was involved in a campaign celebrating the 2020 CX-3, CX-5, Mazda6, and Mazda3 models, which were all named Top Safety Pick+ by the IIHS. The goal was to highlight Mazda’s award-winning safety features and bring them to a broader audience.<br /><br />
             My responsibility was to make Mazda’s safety achievements stand out through digital creative, including dynamic banners and campaign visuals.
           </p>
         </div>
       </section>
-
-      <!-- Web Ad Preview -->
       <section class="project-block">
-        <figure>
-          <img src="assets/safety-online.webp" alt="Mazda Top Safety Online Ad Preview" />
-          <figcaption class="image-caption">2020 MAZDA CX-30 TOP SAFETY ONLINE ADVERTISING</figcaption>
-        </figure>
+        <img src="assets/safety-online.webp" alt="Mazda Top Safety Online Ad Preview" />
+        <p class="image-caption">2020 MAZDA CX-30 TOP SAFETY ONLINE ADVERTISING</p>
       </section>
-
-      <!-- Scroll-to-top arrow -->
-      <a href="#top" class="back-to-top" aria-label="Back to top">
-        <img src="assets/arrow-up.png" alt="Back to top" />
-      </a>
-
-      <!-- Script for scroll-to-top arrow and sidebar hover -->
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const backToTop = document.querySelector('.back-to-top');
-
-          // Show/hide scroll-to-top arrow on scroll
-          window.addEventListener('scroll', () => {
-            if (backToTop && window.scrollY > 300) {
-              backToTop.classList.add('visible');
-            } else if (backToTop) {
-              backToTop.classList.remove('visible');
-            }
-          });
-
-          // Sidebar/project hover effect
-          document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
-            const targetId = link.getAttribute('data-project');
-            const listItem = document.getElementById(targetId);
-
-            if (listItem) {
-              link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
-              link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
-            }
-          });
-
-          // Fade in on first load
-          setTimeout(() => {
-            document.querySelector('.container').classList.add('loaded');
-          }, 100);
-
-          // Fade out before navigating to another page
-          document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
-            link.addEventListener('click', function (e) {
-              // Only fade out for internal links
-              if (this.href && this.href.indexOf(location.hostname) !== -1) {
-                e.preventDefault();
-                document.querySelector('.container').classList.remove('loaded');
-                setTimeout(() => {
-                  window.location = this.href;
-                }, 400);
-              }
-            });
-          });
-        });
-      </script>
     </main>
   </div>
 
   <!-- Mobile Logo on Top -->
-  <div class="mobile-logo" style="display: none;">
+  <div class="mobile-logo">
     <img src="assets/logo.png" alt="Logo" />
   </div>
 
   <!-- Mobile Header -->
-  <header class="mobile-header" style="display: none;">
+  <header class="mobile-header">
     <nav class="mobile-nav">
       <a href="index.html" class="nav-btn">WORK</a>
       <span class="nav-sep">|</span>
       <a href="about.html" class="nav-btn">ABOUT</a>
     </nav>
   </header>
+
+  <!-- Mobile Project Content -->
+  <main class="project-mobile">
+    <section class="project-block">
+      <div class="video-row">
+        <video src="assets/cx30-safety-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/cx30-safety-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/cx30-safety-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <p class="image-caption">2020 MAZDA CX-30 TOP SAFETY DYNAMIC BANNER</p>
+      <div class="project-text" style="text-align: left; max-width: 700px; margin: 2.75rem auto 0 auto;">
+        <h2 class="project-title" style="margin-bottom: 0.25rem; font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase;">2020 MAZDA TOP SAFETY PICKS</h2>
+        <p class="project-role" style="margin-bottom: 1.25rem; color: #aaa; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase;">ROLE: CREATIVE, DIGITAL DESIGN</p>
+        <p class="project-description" style="color: #ddd; line-height: 1.8;">
+          I was involved in a campaign celebrating the 2020 CX-3, CX-5, Mazda6, and Mazda3 models, which were all named Top Safety Pick+ by the IIHS. The goal was to highlight Mazda’s award-winning safety features and bring them to a broader audience.<br /><br />
+          My responsibility was to make Mazda’s safety achievements stand out through digital creative, including dynamic banners and campaign visuals.
+        </p>
+      </div>
+    </section>
+    <section class="project-block">
+      <img src="assets/safety-online.webp" alt="Mazda Top Safety Online Ad Preview" style="width:100%; border-radius:12px; margin-bottom:1rem;" />
+      <p class="image-caption">2020 MAZDA CX-30 TOP SAFETY ONLINE ADVERTISING</p>
+    </section>
+  </main>
+
+  <!-- Scroll-to-top arrow for both desktop and mobile -->
+  <a href="#top" class="back-to-top" aria-label="Back to top">
+    <img src="assets/arrow-up.png" alt="Back to top" />
+  </a>
+
+  <!-- Mobile Footer -->
+  <footer class="mobile-footer">
+    <div class="footer-content">
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="copyright">© 2025 ADRIAN A.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+
+      // Show/hide scroll-to-top arrow on scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      // Smooth scroll to top
+      backToTop.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Fade-in animation for main container
+      setTimeout(() => {
+        document.querySelector('.container').classList.add('loaded');
+      }, 100);
+
+      // Fade-out before navigating to another page
+      document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          if (this.href && this.href.indexOf(location.hostname) !== -1) {
+            e.preventDefault();
+            document.querySelector('.container').classList.remove('loaded');
+            setTimeout(() => {
+              window.location = this.href;
+            }, 400);
+          }
+        });
+      });
+
+      // Sidebar/project hover effect
+      document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
+        const targetId = link.getAttribute('data-project');
+        const listItem = document.getElementById(targetId);
+
+        if (listItem) {
+          link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
+          link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
+        }
+      });
+    });
+  </script>
 </body>
 </html>
