@@ -59,7 +59,7 @@
       </footer>
     </aside>
 
-    <!-- Main project content -->
+    <!-- Main project content (desktop) -->
     <main class="project-page">
       <!-- Project sections with images and captions -->
       <section class="project-block">
@@ -91,73 +91,53 @@
         <img src="assets/google-print.webp" alt="Google Small Business Print Ad" />
         <p class="image-caption">GOOGLE HELPFULNESS ADVERTISING</p>
       </section>
-
-      <!-- Scroll-to-top arrow -->
-      <a href="#top" class="back-to-top" aria-label="Back to top">
-        <img src="assets/arrow-up.png" alt="Back to top" />
-      </a>
-
-      <!-- Script for scroll-to-top arrow and sidebar hover -->
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const backToTop = document.querySelector('.back-to-top');
-
-          // Show/hide scroll-to-top arrow on scroll
-          window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-              backToTop.classList.add('visible');
-            } else {
-              backToTop.classList.remove('visible');
-            }
-          });
-
-          // Sidebar/project hover effect
-          document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
-            const targetId = link.getAttribute('data-project');
-            const listItem = document.getElementById(targetId);
-
-            if (listItem) {
-              link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
-              link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
-            }
-          });
-
-          // Fade in on first load
-          setTimeout(() => {
-            document.querySelector('.container').classList.add('loaded');
-          }, 100);
-
-          // Fade out before navigating to another page
-          document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
-            link.addEventListener('click', function (e) {
-              // Only fade out for internal links
-              if (this.href && this.href.indexOf(location.hostname) !== -1) {
-                e.preventDefault();
-                document.querySelector('.container').classList.remove('loaded');
-                setTimeout(() => {
-                  window.location = this.href;
-                }, 400);
-              }
-            });
-          });
-        });
-      </script>
     </main>
   </div>
 
   <!-- Mobile Logo on Top -->
-  <div class="mobile-logo" style="display: none;">
+  <div class="mobile-logo">
     <img src="assets/logo.png" alt="Logo" />
   </div>
 
   <!-- Mobile Header -->
-  <header class="mobile-header" style="display: none;">
+  <header class="mobile-header">
     <nav class="mobile-nav">
       <a href="index.html" class="nav-btn">WORK</a>
       <span class="nav-sep">|</span>
       <a href="about.html" class="nav-btn">ABOUT</a>
     </nav>
   </header>
+
+  <!-- Mobile Project Content -->
+  <main class="project-mobile">
+    <section class="project-block">
+      <img src="assets/google-hero.webp" alt="Google Small Business Quote UI" class="project-photo" />
+      <p class="image-caption">GOOGLE “REQUEST A QUOTE” FOR SMALL BUSINESSES</p>
+      <div class="project-text" style="text-align: left; max-width: 700px; margin: 0 auto;">
+        <h2 class="project-title" style="margin-bottom: 0.25rem;">GOOGLE HELPFULNESS</h2>
+        <p class="project-role" style="margin-bottom: 1.25rem;">ROLE: UX, DIGITAL DESIGN</p>
+        <p class="project-description" style="color: #ddd; line-height: 1.8;">
+          I participated in the “Google for Small Business” initiative, a project aimed at boosting the online visibility of small businesses. This collaboration with Google Brand Studio was dedicated to developing advertising content that promoted this essential support program, which provides free SEO advice.<br /><br />
+          In this campaign, my role was to improve the clarity and impact of digital dynamic banner ads. I refined and adapted campaign visuals and online messaging.
+        </p>
+      </div>
+    </section>
+    <section class="project-block">
+      <img src="assets/google-layout-1.webp" alt="Google Helpfulness Digital Campaign Layout" class="project-photo" />
+    </section>
+    <section class="project-block">
+      <img src="assets/google-layout-2.webp" alt="Google Dynamic Ads Examples" class="project-photo" />
+    </section>
+    <section class="project-block">
+      <img src="assets/google-print.webp" alt="Google Small Business Print Ad" class="project-photo" />
+      <p class="image-caption">GOOGLE HELPFULNESS ADVERTISING</p>
+    </section>
+  </main>
+
+  <!-- Single Scroll-to-top arrow for both desktop and mobile -->
+  <a href="#top" class="back-to-top" aria-label="Back to top">
+    <img src="assets/arrow-up.png" alt="Back to top" />
+  </a>
 
   <!-- Mobile Footer -->
   <footer class="mobile-footer">
@@ -171,29 +151,52 @@
     </div>
   </footer>
 
-  <!-- Scroll-to-top arrow -->
-  <a href="#top" class="back-to-top" aria-label="Back to top">
-    <img src="assets/arrow-up.png" alt="Back to top" />
-  </a>
-
-  <!-- Show/hide scroll-to-top arrow on scroll -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const backToTops = document.querySelectorAll('.back-to-top');
-      window.addEventListener('scroll', function () {
-        backToTops.forEach(function(backToTop) {
-          if (window.scrollY > 300) {
-            backToTop.classList.add('visible');
-          } else {
-            backToTop.classList.remove('visible');
+      const backToTop = document.querySelector('.back-to-top');
+
+      // Show/hide scroll-to-top arrow on scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      // Smooth scroll to top
+      backToTop.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Fade-in animation for main container
+      setTimeout(() => {
+        document.querySelector('.container').classList.add('loaded');
+      }, 100);
+
+      // Fade-out before navigating to another page
+      document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          if (this.href && this.href.indexOf(location.hostname) !== -1) {
+            e.preventDefault();
+            document.querySelector('.container').classList.remove('loaded');
+            setTimeout(() => {
+              window.location = this.href;
+            }, 400);
           }
         });
       });
-      backToTops.forEach(function(backToTop) {
-        backToTop.addEventListener('click', function (e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+
+      // Sidebar/project hover effect
+      document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
+        const targetId = link.getAttribute('data-project');
+        const listItem = document.getElementById(targetId);
+
+        if (listItem) {
+          link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
+          link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
+        }
       });
     });
   </script>
