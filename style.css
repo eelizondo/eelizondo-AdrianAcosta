@@ -668,6 +668,45 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  .mobile-footer .footer-content {
+    align-items: center !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100%;
+  }
+  .mobile-footer .socials {
+    justify-content: center !important;
+    margin-left: 0 !important;
+    width: 100%;
+  }
+  .mobile-footer .copyright {
+    text-align: center !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-footer .footer-content {
+    align-items: flex-start;    /* Change from center to flex-start */
+    text-align: left;           /* Change from center to left */
+    padding-left: 1.5rem;       /* Optional: add some left padding */
+  }
+  .mobile-footer .socials {
+    justify-content: flex-start; /* Change from center to flex-start */
+    width: 100%;
+    margin-left: 0;              /* Remove any auto margin */
+  }
+  .mobile-footer .copyright {
+    text-align: left;            /* Change from center to left */
+    width: 100%;
+    padding-left: 0;             /* Remove extra padding if any */
+  }
+}
+
+@media (max-width: 768px) {
   .mobile-footer {
     display: flex !important;
     flex-direction: column;
