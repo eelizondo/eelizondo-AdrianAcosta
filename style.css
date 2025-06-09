@@ -89,6 +89,11 @@ strong {
   padding: 1.25rem 2rem;
 }
 
+/* Add consistent spacing between sidebar sections */
+.sidebar-content section + section {
+  margin-top: 1.5rem; /* Adjust as needed for your design */
+}
+
 .project-page {
   margin-left: 320px;
   padding: 5rem 2rem 6rem;
