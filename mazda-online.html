@@ -50,15 +50,9 @@
       <footer>
         <div class="footer-content">
           <div class="socials">
-            <a href="https://www.linkedin.com/in/aacostagcr/" aria-label="LinkedIn" target="_blank" rel="noopener">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://www.instagram.com/onesneakybug/" aria-label="Instagram" target="_blank" rel="noopener">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="mailto:aacostagcr@email.com" aria-label="Email" target="_blank" rel="noopener">
-              <i class="fas fa-envelope"></i>
-            </a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
           <p class="copyright">© 2025 ADRIAN A.</p>
         </div>
@@ -111,120 +105,148 @@
 
       <!-- Script for scroll-to-top arrow and sidebar hover -->
       <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const backToTops = document.querySelectorAll('.back-to-top');
-    window.addEventListener('scroll', function () {
-      backToTops.forEach(function(backToTop) {
-        if (window.scrollY > 300) {
-          backToTop.classList.add('visible');
-        } else {
-          backToTop.classList.remove('visible');
-        }
-      });
-    });
-    backToTops.forEach(function(backToTop) {
-      backToTop.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
-  });
-</script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const backToTop = document.querySelector('.back-to-top');
+
+          // Show/hide scroll-to-top arrow on scroll
+          window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+              backToTop.classList.add('visible');
+            } else {
+              backToTop.classList.remove('visible');
+            }
+          });
+
+          // Sidebar/project hover effect (currently only for .gallery a)
+          const links = document.querySelectorAll('.hoverable-link, .gallery a');
+          links.forEach(link => {
+            const targetId = link.getAttribute('data-project');
+            const listItem = document.getElementById(targetId);
+
+            if (listItem) {
+              link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
+              link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
+            }
+          });
+
+          // Smooth scroll to top
+          backToTop.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        });
+      </script>
     </main>
   </div>
 
   <!-- Mobile Logo on Top -->
-<div class="mobile-logo" style="display: none;">
-  <img src="assets/logo.png" alt="Logo" />
-</div>
-
-<!-- Mobile Header -->
-<header class="mobile-header" style="display: none;">
-  <nav class="mobile-nav">
-    <a href="index.html" class="nav-btn">WORK</a>
-    <span class="nav-sep">|</span>
-    <a href="about.html" class="nav-btn">ABOUT</a>
-  </nav>
-</header>
-
-<main class="project-mobile">
-  <section class="project-block">
-    <div class="video-row">
-      <video src="assets/mx5-ad-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
-      <video src="assets/mx5-ad-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
-      <video src="assets/mx5-ad-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
-    </div>
-    <p class="image-caption">2020 MAZDA MX-5 MIATA RF ONLINE ADVERTISING</p>
-    <div class="project-text" style="text-align: left; max-width: 700px; margin: 2.75rem auto 0 auto;">
-      <h2 class="project-title" style="margin-bottom: 0.25rem; font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase;">MAZDA ONLINE ADVERTISING</h2>
-      <p class="project-role" style="margin-bottom: 1.25rem; color: #aaa; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase;">ROLE: CREATIVE, DIGITAL DESIGN</p>
-      <p class="project-description" style="color: #ddd; line-height: 1.8;">
-        Throughout the year, I partnered with Garage Team Mazda on various online ad campaigns aimed at crafting visually appealing content to effectively communicate the brand’s message to its online audience.<br /><br />
-        As a creative graphic designer, my role involved creating and editing content that not only captured viewers’ attention but also conveyed the brand’s values and drove conversions.
-      </p>
-    </div>
-  </section>
-
-  <!-- Add the rest of the images below the copy, matching your reference layout -->
-  <section class="project-block">
-    <img src="assets/mx5-hero.webp" alt="Mazda MX-5 Hero Image" style="width:100%; border-radius:12px; margin-bottom:1rem;" />
-    <p class="image-caption">2020 MAZDA MX-5 MIATA RF ONLINE ADVERTISING</p>
-  </section>
-
-  <section class="project-block">
-    <img src="assets/cx3-ad-1.webp" alt="Mazda CX-3" style="width:100%; border-radius:12px; margin-bottom:1rem;" />
-    <p class="image-caption">2020 MAZDA MX-3 SPORT FWD - ONLINE ADVERTISING</p>
-  </section>
-
-  <section class="project-block">
-    <img src="assets/mazda2-ad-1.webp" alt="Mazda2" style="width:100%; border-radius:12px; margin-bottom:1rem;" />
-    <p class="image-caption">2020 MAZDA2 SPORT FWD - ONLINE ADVERTISING</p>
-  </section>
-</main>
-
-<!-- Mobile Footer -->
-<footer class="mobile-footer">
-  <div class="footer-content">
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/aacostagcr/" aria-label="LinkedIn" target="_blank" rel="noopener">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://www.instagram.com/onesneakybug/" aria-label="Instagram" target="_blank" rel="noopener">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="mailto:aacostagcr@email.com" aria-label="Email" target="_blank" rel="noopener">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-    <p class="copyright">© 2025 ADRIAN A.</p>
+  <div class="mobile-logo">
+    <img src="assets/logo.png" alt="Logo" />
   </div>
-</footer>
 
-<!-- Scroll-to-top arrow -->
-<a href="#top" class="back-to-top" aria-label="Back to top">
-  <img src="assets/arrow-up.png" alt="Back to top" />
-</a>
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-btn">WORK</a>
+      <span class="nav-sep">|</span>
+      <a href="about.html" class="nav-btn">ABOUT</a>
+    </nav>
+  </header>
 
-<!-- Show/hide scroll-to-top arrow on scroll -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const backToTops = document.querySelectorAll('.back-to-top');
-    window.addEventListener('scroll', function () {
-      backToTops.forEach(function(backToTop) {
+  <main class="project-mobile">
+    <section class="project-block">
+      <div class="video-row">
+        <video src="assets/mx5-ad-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/mx5-ad-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <video src="assets/mx5-ad-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <p class="image-caption">2020 MAZDA MX-5 MIATA RF ONLINE ADVERTISING</p>
+      <div class="project-text" style="text-align: left; max-width: 700px; margin: 2.75rem auto 0 auto;">
+        <h2 class="project-title" style="margin-bottom: 0.25rem; font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase;">MAZDA ONLINE ADVERTISING</h2>
+        <p class="project-role" style="margin-bottom: 1.25rem; color: #aaa; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase;">ROLE: CREATIVE, DIGITAL DESIGN</p>
+        <p class="project-description" style="color: #ddd; line-height: 1.8;">
+          Throughout the year, I partnered with Garage Team Mazda on various online ad campaigns aimed at crafting visually appealing content to effectively communicate the brand’s message to its online audience.<br /><br />
+          As a creative graphic designer, my role involved creating and editing content that not only captured viewers’ attention but also conveyed the brand’s values and drove conversions.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-block">
+      <img src="assets/mx5-hero.webp" alt="Mazda MX-5 Hero Image" style="width:100%; border-radius:12px; margin-bottom:1rem;" />
+      <p class="image-caption">2020 MAZDA MX-5 MIATA RF ONLINE ADVERTISING</p>
+    </section>
+
+    <section class="project-block">
+      <img src="assets/cx3-ad-1.webp" alt="Mazda CX-3" style="width:100%; border-radius:12px; margin-bottom:1rem;" />
+      <p class="image-caption">2020 MAZDA MX-3 SPORT FWD - ONLINE ADVERTISING</p>
+    </section>
+
+    <section class="project-block">
+      <img src="assets/mazda2-ad-1.webp" alt="Mazda2" style="width:100%; border-radius:12px; margin-bottom:1rem;" />
+      <p class="image-caption">2020 MAZDA2 SPORT FWD - ONLINE ADVERTISING</p>
+    </section>
+  </main>
+
+  <!-- Mobile Footer -->
+  <footer class="mobile-footer">
+    <div class="footer-content">
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/aacostagcr/" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/onesneakybug/" aria-label="Instagram" target="_blank" rel="noopener">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="mailto:aacostagcr@email.com" aria-label="Email" target="_blank" rel="noopener">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <p class="copyright">© 2025 ADRIAN A.</p>
+    </div>
+  </footer>
+
+  <!-- Single Scroll-to-top arrow for both desktop and mobile -->
+  <a href="#top" class="back-to-top" aria-label="Back to top">
+    <img src="assets/arrow-up.png" alt="Back to top" />
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+
+      // Show/hide scroll-to-top arrow on scroll
+      window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
           backToTop.classList.add('visible');
         } else {
           backToTop.classList.remove('visible');
         }
       });
-    });
-    backToTops.forEach(function(backToTop) {
+
+      // Sidebar/project hover effect (currently only for .gallery a)
+      const links = document.querySelectorAll('.hoverable-link, .gallery a');
+      links.forEach(link => {
+        const targetId = link.getAttribute('data-project');
+        const listItem = document.getElementById(targetId);
+
+        if (listItem) {
+          link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
+          link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
+        }
+      });
+
+      // Smooth scroll to top
       backToTop.addEventListener('click', function (e) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
-  });
-</script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(() => {
+        document.querySelector('.container').classList.add('loaded');
+      }, 100);
+    });
+  </script>
 </body>
 </html>

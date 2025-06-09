@@ -497,7 +497,19 @@ figcaption {
   object-fit: cover;
   border-radius: 10px;
   background: #111;
-  display: block;
+}
+
+.project-page .video-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.project-page .video-row video {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  background: #000;
 }
 
 @media (max-width: 1100px) {
@@ -892,6 +904,18 @@ body {
     min-width: 80px;
     height: 180px;
   }
+}
+
+/* Desktop: show .project-page, hide .project-mobile */
+@media (min-width: 900px) {
+  .project-page { display: block; }
+  .project-mobile { display: none; }
+}
+
+/* Mobile: hide .project-page, show .project-mobile */
+@media (max-width: 899px) {
+  .project-page { display: none; }
+  .project-mobile { display: block; }
 }
 
 /* Desktop: show desktop, hide mobile by default */
