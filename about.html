@@ -95,12 +95,13 @@
         <p>Graphic Design, Art Direction, UX/UI Design, AI Content Generation, Illustration, Photography, Color Theory, Web Design, Print Design, Branding and Identity.</p>
       </section>
 
-      <!-- Scroll-to-top arrow -->
-      <a href="#top" class="back-to-top" aria-label="Back to top">
-        <img src="assets/arrow-up.png" alt="Back to top" />
-      </a>
     </main>
   </div>
+
+  <!-- Scroll-to-top arrow (move here, after .container and before mobile-footer) -->
+  <a href="#top" class="back-to-top" aria-label="Back to top">
+    <img src="assets/arrow-up.png" alt="Back to top" />
+  </a>
 
   <!-- Mobile Logo on Top -->
   <div class="mobile-logo" style="display: none;">
@@ -167,6 +168,12 @@
         } else {
           backToTop.classList.remove('visible');
         }
+      });
+
+      // Smooth scroll to top (add this handler)
+      backToTop.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
       // Fade-in animation for main container
