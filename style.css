@@ -606,6 +606,14 @@ h3 {
   padding: 1rem;
 }
 
+.mobile-gallery {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.mobile-gallery.loaded {
+  opacity: 1;
+}
+
 /* Image blocks */
 .mobile-image-block img {
   width: 100%;
@@ -1082,5 +1090,13 @@ body {
   transition: opacity 0.4s ease;
 }
 .about-mobile.loaded {
+  opacity: 1;
+}
+
+.project-mobile {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.project-mobile.loaded {
   opacity: 1;
 }

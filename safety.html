@@ -155,6 +155,11 @@
         document.querySelector('.container').classList.add('loaded');
       }, 100);
 
+      // Fade-in animation for mobile project section
+      setTimeout(() => {
+        document.querySelector('.project-mobile')?.classList.add('loaded');
+      }, 100);
+
       // Fade-out before navigating to another page
       document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
         link.addEventListener('click', function (e) {
