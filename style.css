@@ -483,26 +483,50 @@ figcaption {
 
 .video-row {
   display: flex;
-  gap: 0.5rem;
+  gap: 1.5rem;
   justify-content: center;
   align-items: flex-start;
   margin-bottom: 1.5rem;
 }
 
 .video-row video {
-  width: 32vw;      /* 3 videos fit in one row with some gap */
-  max-width: 110px; /* Prevents them from being too large on tablets */
-  min-width: 80px;  /* Optional: keeps them visible on very small screens */
-  height: 180px;    /* Adjust as needed for your aspect ratio */
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: 0 !important;
+  box-shadow: none;
+  background: #000;
   object-fit: cover;
-  border-radius: 10px;
-  background: #111;
+}
+
+/* Make sure the row doesn't overflow the container */
+@media (min-width: 900px) {
+  .video-row {
+    max-width: 1100px;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .video-row video {
+    max-width: 340px;
+  }
+}
+
+/* Mobile: stack videos, add border-radius for mobile only */
+@media (max-width: 700px) {
+  .video-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .video-row video {
+    max-width: 100%;
+    border-radius: 12px;
+  }
 }
 
 .project-page .video-row {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-end;
   margin-bottom: 1.5rem;
 }
 .project-page .video-row video {
@@ -947,5 +971,15 @@ body {
   .mobile-footer,
   .project-mobile {
     display: block !important;
+  }
+}
+
+/* Desktop: align videos to the right within the project-page */
+@media (min-width: 900px) {
+  .video-row {
+    justify-content: flex-start !important; /* Align videos to the left */
+    max-width: 1100px;
+    margin-left: 0;
+    margin-right: auto;
   }
 }
