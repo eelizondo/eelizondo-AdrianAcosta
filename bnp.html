@@ -86,8 +86,16 @@
         <p class="image-caption">MAZDAUSA.COM • BUILD & PRICE • 2020 MX-5 MIATA RF • INTERIOR 360</p>
       </section>
       <section class="project-block">
-        <img src="assets/bnp-carousel.webp" alt="Mazda CX-30 Carousel" />
-        <p class="image-caption">2020 MAZDA CX-30</p>
+        <div class="carousel">
+          <button class="carousel-btn prev" aria-label="Previous image">&#8249;</button>
+          <img class="carousel-image" src="assets/bnp-carousel-1.jpg" alt="Mazda CX-30 Carousel 1" />
+          <img class="carousel-image" src="assets/bnp-carousel-2.jpg" alt="Mazda CX-30 Carousel 2" />
+          <img class="carousel-image" src="assets/bnp-carousel-3.jpg" alt="Mazda CX-30 Carousel 3" />
+          <button class="carousel-btn next" aria-label="Next image">&#8250;</button>
+        </div>
+        <div class="carousel-caption" style="display:block;">DRIVETRAIN ILLUSTRATION</div>
+        <div class="carousel-caption" style="display:none;">VANISH POINT GUIDE</div>
+        <div class="carousel-caption" style="display:none;">2020 MAZDA CX-30</div>
       </section>
     </main>
   </div>
@@ -130,7 +138,13 @@
       <p class="image-caption">MAZDAUSA.COM • BUILD & PRICE • 2020 MX-5 MIATA RF • INTERIOR 360</p>
     </section>
     <section class="project-block">
-      <img src="assets/bnp-carousel.webp" alt="Mazda CX-30 Carousel" class="project-photo" />
+      <div class="carousel">
+        <button class="carousel-btn prev" aria-label="Previous image">&#8249;</button>
+        <img class="carousel-image" src="assets/bnp-carousel-1.jpg" alt="Mazda CX-30 Carousel 1" class="project-photo" />
+        <img class="carousel-image" src="assets/bnp-carousel-2.jpg" alt="Mazda CX-30 Carousel 2" style="display:none;" class="project-photo" />
+        <img class="carousel-image" src="assets/bnp-carousel-3.jpg" alt="Mazda CX-30 Carousel 3" style="display:none;" class="project-photo" />
+        <button class="carousel-btn next" aria-label="Next image">&#8250;</button>
+      </div>
       <p class="image-caption">2020 MAZDA CX-30</p>
     </section>
   </main>
@@ -203,6 +217,52 @@
           link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
           link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
         }
+      });
+
+      document.querySelectorAll('.project-block').forEach(block => {
+        const carousel = block.querySelector('.carousel');
+        if (!carousel) return;
+        const images = carousel.querySelectorAll('.carousel-image');
+        const captions = block.querySelectorAll('.carousel-caption');
+        const prevBtn = carousel.querySelector('.carousel-btn.prev');
+        const nextBtn = carousel.querySelector('.carousel-btn.next');
+        let current = 0;
+
+        function showImage(idx) {
+          images.forEach((img, i) => {
+            if (img.classList.contains('active') && i !== idx) {
+              img.classList.add('fading');
+              setTimeout(() => {
+                img.classList.remove('active', 'fading');
+              }, 500); // match your CSS transition duration
+            }
+          });
+
+          setTimeout(() => {
+            images.forEach((img, i) => {
+              if (i === idx) {
+                img.classList.add('active');
+              } else if (!img.classList.contains('fading')) {
+                img.classList.remove('active');
+              }
+            });
+            captions.forEach((cap, i) => {
+              cap.style.display = i === idx ? 'block' : 'none';
+            });
+          }, 500); // match your CSS transition duration
+        }
+
+        prevBtn.addEventListener('click', () => {
+          current = (current - 1 + images.length) % images.length;
+          showImage(current);
+        });
+
+        nextBtn.addEventListener('click', () => {
+          current = (current + 1) % images.length;
+          showImage(current);
+        });
+
+        showImage(current);
       });
     });
   </script>
