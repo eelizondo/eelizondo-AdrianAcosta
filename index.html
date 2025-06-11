@@ -201,6 +201,17 @@
           }
         });
       });
+
+      const currentPage = window.location.pathname.split('/').pop(); // Get the current page filename
+      const navLinks = document.querySelectorAll('.hoverable-link');
+
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active'); // Add the active class to the current page link
+        } else {
+          link.classList.remove('active'); // Ensure other links don't have the active class
+        }
+      });
     });
   </script>
 
