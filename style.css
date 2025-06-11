@@ -1193,6 +1193,28 @@ body {
   max-width: none;
 }
 
+/* Optimize carousel for mobile view */
+@media (max-width: 768px) {
+  .carousel {
+    width: 90%; /* Adjust width for mobile screens */
+    max-width: 320px; /* Set a maximum width */
+    margin: 0 auto; /* Center the carousel */
+    border-radius: 8px; /* Slightly reduce border radius */
+  }
+
+  .carousel-image {
+    width: 100%; /* Ensure images fit the carousel */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Match carousel border radius */
+  }
+
+  .carousel-btn {
+    font-size: 1.5rem; /* Reduce button size for mobile */
+    padding: 0.3rem; /* Adjust padding for smaller buttons */
+    z-index: 10; /* Ensure buttons are above images */
+  }
+}
+
 .container,
 .project-page,
 .project-block,
