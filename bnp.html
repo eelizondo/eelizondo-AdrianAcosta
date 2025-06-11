@@ -230,26 +230,18 @@
 
         function showImage(idx) {
           images.forEach((img, i) => {
-            if (img.classList.contains('active') && i !== idx) {
-              img.classList.add('fading');
-              setTimeout(() => {
-                img.classList.remove('active', 'fading');
-              }, 500); // match your CSS transition duration
+            if (i === idx) {
+              img.classList.add('active');
+              img.style.display = 'block'; // Ensure the image is visible
+            } else {
+              img.classList.remove('active');
+              img.style.display = 'none'; // Hide non-active images
             }
           });
 
-          setTimeout(() => {
-            images.forEach((img, i) => {
-              if (i === idx) {
-                img.classList.add('active');
-              } else if (!img.classList.contains('fading')) {
-                img.classList.remove('active');
-              }
-            });
-            captions.forEach((cap, i) => {
-              cap.style.display = i === idx ? 'block' : 'none';
-            });
-          }, 500); // match your CSS transition duration
+          captions.forEach((cap, i) => {
+            cap.style.display = i === idx ? 'block' : 'none';
+          });
         }
 
         prevBtn.addEventListener('click', () => {
