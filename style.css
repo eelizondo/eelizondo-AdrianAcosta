@@ -1290,3 +1290,21 @@ swiper-slide {
 .swiper-button-prev::after {
   font-size: 18px; /* Adjust arrow size */
 }
+
+@media (max-width: 768px) {
+  .back-to-top {
+    width: 36px; /* Ensure the container is a square */
+    height: 36px; /* Match width for a perfect circle */
+    border-radius: 50%; /* Make the container circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevent image overflow */
+  }
+
+  .back-to-top img {
+    width: 100%; /* Fit the image within the container */
+    height: 100%; /* Maintain aspect ratio */
+    border-radius: 50%; /* Ensure the image is circular */
+  }
+}
