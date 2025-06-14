@@ -1172,17 +1172,23 @@ body {
 }
 
 .carousel-caption {
-  color: #ccc;
-  font-size: 12px;
-  font-family: 'Open Sans', sans-serif;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  font-weight: 400;
-  margin-top: 1.5rem;
-  margin-left: 0;
-  margin-bottom: 1rem;
-  text-align: left;
-  max-width: 900px;
+  text-align: left; /* Align text to the left */
+  color: #ccc; /* Light gray font color */
+  font-size: 12px; /* Match the font size */
+  font-weight: 400; /* Normal font weight */
+  font-family: 'Open Sans', sans-serif; /* Font family */
+  letter-spacing: 0.15em; /* Slightly spaced out */
+  text-transform: uppercase; /* Transform text to uppercase */
+  line-height: 1.4; /* Better readability */
+  margin-top: 0.75rem; /* Adjust top margin */
+  margin-bottom: 2rem; /* Adjust bottom margin */
+  background-color: transparent; /* Remove background */
+  padding: 0; /* Remove padding */
+  position: absolute;
+  bottom: 10px; /* Position at the bottom of the slide */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 }
 
 /* Optional: Make the carousel section edge-to-edge */
