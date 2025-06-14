@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.css" />
 </head>
 <body>
   <div id="top"></div>
@@ -85,13 +87,19 @@
         <p class="image-caption">MAZDAUSA.COM • BUILD & PRICE • 2020 MX-5 MIATA RF • INTERIOR 360</p>
       </section>
       <section class="project-block">
-        <div class="carousel">
-          <button class="carousel-btn prev" aria-label="Previous image">&#8249;</button>
-          <img class="carousel-image" src="assets/bnp/carousel/bnp-carousel-1.jpg" alt="Mazda CX-30 Carousel 1" />
-          <img class="carousel-image" src="assets/bnp/carousel/bnp-carousel-2.jpg" alt="Mazda CX-30 Carousel 2" />
-          <img class="carousel-image" src="assets/bnp/carousel/bnp-carousel-3.jpg" alt="Mazda CX-30 Carousel 3" />
-          <button class="carousel-btn next" aria-label="Next image">&#8250;</button>
-        </div>
+        <section class="project-block">
+          <swiper-container class="mySwiper" navigation="true">
+            <swiper-slide>
+              <img src="assets/bnp/carousel/bnp-carousel-1.jpg" alt="Mazda CX-30 Carousel 1" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="assets/bnp/carousel/bnp-carousel-2.jpg" alt="Mazda CX-30 Carousel 2" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="assets/bnp/carousel/bnp-carousel-3.jpg" alt="Mazda CX-30 Carousel 3" />
+            </swiper-slide>
+          </swiper-container>
+        </section>
         <div class="carousel-caption" style="display:block;">DRIVETRAIN ILLUSTRATION</div>
         <div class="carousel-caption" style="display:none;">VANISH POINT GUIDE</div>
         <div class="carousel-caption" style="display:none;">2020 MAZDA CX-30</div>
@@ -137,13 +145,17 @@
       <p class="image-caption">MAZDAUSA.COM • BUILD & PRICE • 2020 MX-5 MIATA RF • INTERIOR 360</p>
     </section>
     <section class="project-block">
-      <div class="carousel">
-        <button class="carousel-btn prev" aria-label="Previous image">&#8249;</button>
-        <img class="carousel-image" src="assets/bnp/carousel/bnp-carousel-1.jpg" alt="Mazda CX-30 Carousel 1" class="project-photo" />
-        <img class="carousel-image" src="assets/bnp/carousel/bnp-carousel-2.jpg" alt="Mazda CX-30 Carousel 2" style="display:none;" class="project-photo" />
-        <img class="carousel-image" src="assets/bnp/carousel/bnp-carousel-3.jpg" alt="Mazda CX-30 Carousel 3" style="display:none;" class="project-photo" />
-        <button class="carousel-btn next" aria-label="Next image">&#8250;</button>
-      </div>
+      <swiper-container class="mySwiper" navigation="true">
+        <swiper-slide>
+          <img src="assets/bnp/carousel/bnp-carousel-1.jpg" alt="Mazda CX-30 Carousel 1" class="project-photo" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="assets/bnp/carousel/bnp-carousel-2.jpg" alt="Mazda CX-30 Carousel 2" class="project-photo" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="assets/bnp/carousel/bnp-carousel-3.jpg" alt="Mazda CX-30 Carousel 3" class="project-photo" />
+        </swiper-slide>
+      </swiper-container>
       <p class="image-caption">2020 MAZDA CX-30</p>
     </section>
   </main>
@@ -165,6 +177,8 @@
     </div>
   </footer>
 
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const backToTop = document.querySelector('.back-to-top');
@@ -254,6 +268,15 @@
         });
 
         showImage(current);
+      });
+
+      // Initialize Swiper for project-mobile section
+      const swiper = new Swiper('.mySwiper', {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        loop: true,
       });
     });
   </script>

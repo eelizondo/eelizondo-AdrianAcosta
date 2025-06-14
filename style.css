@@ -1239,3 +1239,48 @@ body {
     display: block;
   }
 }
+
+.mySwiper {
+  width: 100%;
+  height: auto;
+  background-color: #040404;
+}
+
+.mySwiper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #040404;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff; /* Change arrow color to white */
+  background-color: #040404; /* Match carousel background */
+  border-radius: 50%; /* Make arrows circular */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8; /* Slight transparency */
+  transition: opacity 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  opacity: 1; /* Fully visible on hover */
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px; /* Adjust arrow size */
+}
