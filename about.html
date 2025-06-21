@@ -226,6 +226,28 @@
           link.classList.remove('active'); // Ensure other links don't have the active class
         }
       });
+
+      // Image swap logic for both desktop and mobile
+      const photoSelectors = [
+        'main.about-page .about-photo',
+        'main.about-mobile .about-photo'
+      ];
+      const photoElements = photoSelectors
+        .map(sel => document.querySelector(sel))
+        .filter(Boolean);
+
+      const images = [
+        'assets/about/adrian-photo-1.webp',
+        'assets/about/adrian-photo-2.webp'
+      ];
+      let current = 0;
+
+      setInterval(() => {
+        current = (current + 1) % images.length;
+        photoElements.forEach(img => {
+          img.src = images[current];
+        });
+      }, 30000); // 30 seconds
     });
   </script>
 </body>
