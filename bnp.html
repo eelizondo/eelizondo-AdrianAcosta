@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic HTML5 meta information -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MazdaUSA.com B&P | Adrian Acosta</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Swiper CSS -->
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" /> <!-- Main site styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /> <!-- Font Awesome icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+  
+  <!-- Swiper carousel CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.css" />
-  <link rel="icon" type="image/png" href="assets/global/favicon-Adrian.png">
+  <link rel="icon" type="image/png" href="assets/global/favicon-Adrian.png"> <!-- Site favicon -->
 </head>
 <body>
+  <!-- Anchor point for scroll-to-top functionality -->
   <div id="top"></div>
 
   <!-- Main container for sidebar and project content -->
@@ -24,6 +29,7 @@
             <h1>ADRIAN<br>ACOSTA</h1>
           </a>
         </div>
+        
         <!-- About section -->
         <section>
           <h2>ABOUT</h2>
@@ -33,10 +39,12 @@
             </a>
           </p>
         </section>
+        
         <!-- Projects section -->
         <section>
           <h2>PROJECTS</h2>
           <ul>
+            <!-- Project links with IDs for hover effects - current page marked as active -->
             <li id="cx9"><a href="mazda-cx9.html" class="hoverable-link">Mazda CX-9 VDX</a></li>
             <li id="online"><a href="mazda-online.html" class="hoverable-link">Mazda Online Advertising</a></li>
             <li id="google"><a href="google.html" class="hoverable-link">Google Small Business</a></li>
@@ -45,6 +53,7 @@
             <li id="torres"><a href="torres.html" class="hoverable-link">Torres River Friends</a></li>
           </ul>
         </section>
+        
         <!-- Photography section -->
         <section>
           <h2>PHOTOGRAPHY</h2>
@@ -53,6 +62,8 @@
           </ul>
         </section>
       </div>
+      
+      <!-- Sidebar footer with social links (placeholder links) -->
       <footer>
         <div class="footer-content">
           <div class="socials">
@@ -65,8 +76,9 @@
       </footer>
     </aside>
 
-    <!-- Main project content (desktop) -->
+    <!-- Main project content (desktop view) -->
     <main class="project-page">
+      <!-- Hero section with project overview -->
       <section class="project-block">
         <img src="assets/bnp/bnp-hero.webp" alt="Mazda Drivetrain Illustration – 2020 Mazda CX-30" />
         <p class="image-caption">MAZDAUSA.COM DRIVETRAIN ILLUSTRATION • 2020 MAZDA CX-30</p>
@@ -79,46 +91,49 @@
           </p>
         </div>
       </section>
+      <!-- Exterior 360 video demonstration -->
       <section class="project-block">
         <video src="assets/bnp/Exterior/bnp-exterior.mp4" alt="Mazda Build & Price – MX-5 Miata RF Exterior 360" autoplay muted loop playsinline style="max-width: 100%; height: auto;"></video>
         <p class="image-caption">MAZDAUSA.COM • BUILD & PRICE • 2020 MX-5 MIATA RF • EXTERIOR 360</p>
       </section>
+      <!-- Interior 360 video demonstration -->
       <section class="project-block">
         <video src="assets/bnp/Interior/bnp-interior.mp4" alt="Mazda Build & Price – MX-5 Miata RF Interior 360" autoplay muted loop playsinline style="max-width: 100%; height: auto;"></video>
         <p class="image-caption">MAZDAUSA.COM • BUILD & PRICE • 2020 MX-5 MIATA RF • INTERIOR 360</p>
       </section>
+      <!-- Empty project block container (nested carousel section inside) -->
       <section class="project-block">
         
         
+        <!-- Swiper carousel showcasing drivetrain illustrations -->
         <section class="project-block">
-  <swiper-container class="mySwiper" navigation="true">
-    <swiper-slide>
-      <img src="assets/bnp/carousel/bnp-carousel-1.jpg" alt="Mazda CX-30 Carousel 1" />
-      <div class="carousel-caption">DRIVETRAIN ILLUSTRATION</div>
-    </swiper-slide>
-    <swiper-slide>
-      <img src="assets/bnp/carousel/bnp-carousel-2.jpg" alt="Mazda CX-30 Carousel 2" />
-      <div class="carousel-caption">VANISH POINT GUIDE</div>
-    </swiper-slide>
-    <swiper-slide>
-      <img src="assets/bnp/carousel/bnp-carousel-3.jpg" alt="Mazda CX-30 Carousel 3" />
-      <div class="carousel-caption">2020 MAZDA CX-30</div>
-    </swiper-slide>
-  </swiper-container>
-</section>
-        
-        
-        
+          <swiper-container class="mySwiper" navigation="true">
+            <swiper-slide>
+              <img src="assets/bnp/carousel/bnp-carousel-1.jpg" alt="Mazda CX-30 Carousel 1" />
+              <div class="carousel-caption">DRIVETRAIN ILLUSTRATION</div>
+            </swiper-slide>
+            <swiper-slide>
+              <img src="assets/bnp/carousel/bnp-carousel-2.jpg" alt="Mazda CX-30 Carousel 2" />
+              <div class="carousel-caption">VANISH POINT GUIDE</div>
+            </swiper-slide>
+            <swiper-slide>
+              <img src="assets/bnp/carousel/bnp-carousel-3.jpg" alt="Mazda CX-30 Carousel 3" />
+              <div class="carousel-caption">2020 MAZDA CX-30</div>
+            </swiper-slide>
+          </swiper-container>
+        </section>
       </section>
     </main>
   </div>
 
+  <!-- Mobile-specific elements -->
+  
   <!-- Mobile Logo on Top -->
   <div class="mobile-logo">
     <img src="assets/global/logo.png" alt="Logo" />
   </div>
 
-  <!-- Mobile Header -->
+  <!-- Mobile Header with navigation -->
   <header class="mobile-header">
     <nav class="mobile-nav">
       <a href="index.html" class="nav-btn">WORK</a>
@@ -127,8 +142,9 @@
     </nav>
   </header>
 
-  <!-- Mobile Project Content -->
+  <!-- Mobile Project Content (optimized for mobile viewing) -->
   <main class="project-mobile">
+    <!-- Mobile hero section with custom styling -->
     <section class="project-block">
       <img src="assets/bnp/bnp-hero.webp" alt="Mazda Drivetrain Illustration – 2020 Mazda CX-30" class="project-photo" />
       <p class="image-caption">MAZDAUSA.COM DRIVETRAIN ILLUSTRATION • 2020 MAZDA CX-30</p>
@@ -142,14 +158,17 @@
         </p>
       </div>
     </section>
+    <!-- Mobile exterior 360 video -->
     <section class="project-block">
         <video src="assets/bnp/Exterior/bnp-exterior.mp4" alt="Mazda Build & Price – MX-5 Miata RF Exterior 360" autoplay muted loop playsinline style="max-width: 100%; height: auto;"></video>
         <p class="image-caption">MAZDAUSA.COM • BUILD & PRICE • 2020 MX-5 MIATA RF • EXTERIOR 360</p>
       </section>
+      <!-- Mobile interior 360 video -->
       <section class="project-block">
         <video src="assets/bnp/Interior/bnp-interior.mp4" alt="Mazda Build & Price – MX-5 Miata RF Interior 360" autoplay muted loop playsinline style="max-width: 100%; height: auto;"></video>
         <p class="image-caption">MAZDAUSA.COM • BUILD & PRICE • 2020 MX-5 MIATA RF • INTERIOR 360</p>
       </section>
+      <!-- Mobile Swiper carousel for drivetrain illustrations -->
       <section class="project-block">
         <swiper-container class="mySwiper" navigation="true">
           <swiper-slide>
@@ -175,7 +194,7 @@
     <img src="assets/global/arrow-up.png" alt="Back to top" />
   </a>
 
-  <!-- Mobile Footer -->
+  <!-- Mobile Footer with placeholder social links -->
   <footer class="mobile-footer">
     <div class="footer-content">
       <div class="socials">
@@ -187,13 +206,15 @@
     </div>
   </footer>
 
-  <!-- Swiper JS -->
+  <!-- Swiper carousel library JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  
+  <!-- Main JavaScript for interactive functionality -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const backToTop = document.querySelector('.back-to-top');
 
-      // Show/hide scroll-to-top arrow on scroll
+      // Show/hide scroll-to-top arrow based on scroll position
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
           backToTop.classList.add('visible');
@@ -202,46 +223,49 @@
         }
       });
 
-      // Smooth scroll to top
+      // Smooth scroll to top when arrow is clicked
       backToTop.addEventListener('click', function (e) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      // Fade-in animation for main container
+      // Fade-in animation for main desktop container after page load
       setTimeout(() => {
         document.querySelector('.container').classList.add('loaded');
       }, 100);
 
-      // Fade-in animation for mobile project section
+      // Fade-in animation for mobile project section after page load
       setTimeout(() => {
         document.querySelector('.project-mobile')?.classList.add('loaded');
       }, 100);
 
-      // Fade-out before navigating to another page
+      // Fade-out effect before navigating to other pages for smooth transitions
       document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
         link.addEventListener('click', function (e) {
+          // Only apply fade-out for internal links
           if (this.href && this.href.indexOf(location.hostname) !== -1) {
             e.preventDefault();
             document.querySelector('.container').classList.remove('loaded');
             setTimeout(() => {
               window.location = this.href;
-            }, 400);
+            }, 400); // 400ms delay for fade-out animation
           }
         });
       });
 
-      // Sidebar/project hover effect
+      // Sidebar/project hover effect system
       document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
         const targetId = link.getAttribute('data-project');
         const listItem = document.getElementById(targetId);
 
+        // Add hover effects to corresponding sidebar items
         if (listItem) {
           link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
           link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
         }
       });
 
+      // Custom carousel functionality for legacy carousel elements (if any)
       document.querySelectorAll('.project-block').forEach(block => {
         const carousel = block.querySelector('.carousel');
         if (!carousel) return;
@@ -251,6 +275,7 @@
         const nextBtn = carousel.querySelector('.carousel-btn.next');
         let current = 0;
 
+        // Function to display the selected image and caption
         function showImage(idx) {
           images.forEach((img, i) => {
             if (i === idx) {
@@ -267,27 +292,31 @@
           });
         }
 
+        // Previous button event handler
         prevBtn.addEventListener('click', () => {
           current = (current - 1 + images.length) % images.length;
           showImage(current);
         });
 
+        // Next button event handler
         nextBtn.addEventListener('click', () => {
           current = (current + 1) % images.length;
           showImage(current);
         });
 
+        // Initialize carousel
         showImage(current);
       });
 
-      // Initialize Swiper for project-mobile section
+      // Initialize Swiper carousel for modern carousel implementation
       const swiper = new Swiper('.mySwiper', {
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
-        loop: true,
+        loop: true, // Enable infinite loop
         on: {
+          // Handle caption visibility on slide change
           slideChange: function () {
             const slides = document.querySelectorAll('.swiper-slide');
             slides.forEach((slide, index) => {

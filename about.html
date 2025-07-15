@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic HTML5 meta information -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | Adrian Acosta</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/global/favicon-Adrian.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" /> <!-- Main site styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /> <!-- Font Awesome icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+  <link rel="icon" type="image/png" href="assets/global/favicon-Adrian.png"> <!-- Site favicon -->
 </head>
 <body>
+  <!-- Anchor point for scroll-to-top functionality -->
   <div id="top"></div>
 
   <!-- Main container for sidebar and about content -->
@@ -23,20 +27,23 @@
             <h1>ADRIAN<br>ACOSTA</h1>
           </a>
         </div>
+        
         <!-- About section -->
         <section>
           <h2>ABOUT</h2>
           <p id="about">
+            <!-- Self-referencing link with data attribute for hover effects -->
             <a href="about.html" data-project="about" class="hoverable-link">
               Adrian Acosta &nbsp; | &nbsp; Designer
             </a>
           </p>
         </section>
+        
         <!-- Projects section -->
         <section>
           <h2>PROJECTS</h2>
           <ul>
-            <!-- Each project links to a page -->
+            <!-- Each project has an ID for hover effects and links to respective pages -->
             <li id="cx9"><a href="mazda-cx9.html" class="hoverable-link">Mazda CX-9 VDX</a></li>
             <li id="online"><a href="mazda-online.html" class="hoverable-link">Mazda Online Advertising</a></li>
             <li id="google"><a href="google.html" class="hoverable-link">Google Small Business</a></li>
@@ -45,6 +52,7 @@
             <li id="torres"><a href="torres.html" class="hoverable-link">Torres River Friends</a></li>
           </ul>
         </section>
+        
         <!-- Photography section -->
         <section>
           <h2>PHOTOGRAPHY</h2>
@@ -53,10 +61,12 @@
           </ul>
         </section>
       </div>
+      
       <!-- Footer with socials -->
       <footer>
         <div class="footer-content">
           <div class="socials">
+            <!-- Social media links with accessibility labels -->
             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -66,38 +76,47 @@
       </footer>
     </aside>
 
-    <!-- Main about content -->
+    <!-- Main about content for desktop view -->
     <main class="about-page">
       <section class="about-intro">
+        <!-- Profile photo that changes periodically -->
         <img src="assets/about/adrian-photo-1.webp" alt="Adrian Acosta portrait" class="about-photo"/>
         <div class="about-text">
           <h2>ABOUT ADRIAN ACOSTA</h2>
+          <!-- Main bio paragraph with key skills highlighted -->
           <p><strong>Interdisciplinary designer</strong> with extensive experience in fast-paced <strong>digital advertising</strong>. A fusion of <strong>Graphic Design, Art</strong> and <strong>IT Engineering</strong> backgrounds fuel a creative and analytical approach, transforming intricate business needs into captivating visual stories that resonate with audiences and drive results.</p>
+          <!-- Resume download link -->
           <p><a href="assets/resume/Adrian Acosta - Resume.pdf" class="download-resume" target="_blank" rel="noopener noreferrer">>>> DOWNLOAD RESUME <<<</a></p>
         </div>
       </section>
 
+      <!-- Visual separator between sections -->
       <hr class="section-divider" aria-hidden="true" />
 
       <section class="experience">
         <h2>EXPERIENCE</h2>
+        <!-- Current position -->
         <div class="job">
           <h3>Creative Director | JungleMagic (2022–Present)</h3>
           <p><strong>Founder & Creative Lead</strong> of <em>JungleMagic</em>, a brand that intertwines artistic vision with spiritual exploration. Developed a framework of seven core insights into the human experience, guiding the creation of art and stories showcased in a <strong>5-star rated Art Shop</strong>, that serves as both a creative platform and business venture.</p>
         </div>
 
+        <!-- Previous position -->
         <div class="job">
           <h3>Art Director | Wunderman Thompson (2019–2022)</h3>
           <p>Played a key role in the Art Direction, creation, and production of digital advertising campaigns. Collaborated with internal and external teams to execute creative strategies and campaigns for high-profile clients, including <strong>Garage Team Mazda, Google, and AT&T</strong>.</p>
         </div>
       </section>
 
+      <!-- Visual separator between sections -->
       <hr class="section-divider" aria-hidden="true" />
 
       <section class="skills">
         <h2>SKILLS</h2>
+        <!-- Technical software proficiency -->
         <h3>Technical Skills</h3>
         <p>Adobe Creative Suite (XD, Photoshop, Illustrator, InDesign, After Effects, Premiere Pro, Lightroom), Figma, Sketch, Zeplin, Readymag, Webflow.</p>
+        <!-- Design capabilities and expertise -->
         <h3>Design Skills</h3>
         <p>Graphic Design, Art Direction, UX/UI Design, AI Content Generation, Illustration, Photography, Color Theory, Web Design, Print Design, Branding and Identity.</p>
       </section>
@@ -105,17 +124,19 @@
     </main>
   </div>
 
-  <!-- Scroll-to-top arrow (move here, after .container and before mobile-footer) -->
+  <!-- Scroll-to-top arrow (positioned after main container) -->
   <a href="#top" class="back-to-top" aria-label="Back to top">
     <img src="assets/global/arrow-up.png" alt="Back to top" />
   </a>
 
+  <!-- Mobile-specific elements (hidden by default with inline styles) -->
+  
   <!-- Mobile Logo on Top -->
   <div class="mobile-logo" style="display: none;">
     <img src="assets/global/logo.png" alt="Logo" />
   </div>
 
-  <!-- Mobile Header -->
+  <!-- Mobile Header with navigation -->
   <header class="mobile-header" style="display: none;">
     <nav class="mobile-nav">
       <a href="index.html" class="nav-btn">WORK</a>
@@ -124,16 +145,19 @@
     </nav>
   </header>
 
-  <!-- Mobile About Section -->
+  <!-- Mobile About Section (simplified version for mobile devices) -->
   <main class="about-mobile">
     <section class="about-intro">
+      <!-- Same profile photo as desktop but styled for mobile -->
       <img src="assets/about/adrian-photo-1.webp" alt="Adrian Acosta portrait" class="about-photo"/>
       <div class="about-text">
         <h2>ABOUT ADRIAN ACOSTA</h2>
+        <!-- Condensed bio for mobile readability -->
         <p>
           Interdisciplinary designer with extensive experience in fast-paced digital advertising.<br>
           A fusion in Graphic Design, Art and IT Engineering backgrounds fuel a creative and analytical approach, transforming intricate business needs into captivating visual stories that resonate with audiences and drive results.
         </p>
+        <!-- Mobile-styled resume download with custom arrow styling -->
         <p>
           <a href="assets/resume/Adrian Acosta - Resume.pdf" class="download-resume" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
             <span style="text-decoration:none;">&gt; &gt; &gt;</span>
@@ -145,10 +169,11 @@
     </section>
   </main>
 
-  <!-- Mobile Footer -->
+  <!-- Mobile Footer with working social links -->
   <footer class="mobile-footer">
     <div class="footer-content">
       <div class="socials">
+        <!-- Functional social media links for mobile -->
         <a href="https://www.linkedin.com/in/aacostagcr/" aria-label="LinkedIn" target="_blank" rel="noopener">
           <i class="fab fa-linkedin"></i>
         </a>
@@ -163,12 +188,12 @@
     </div>
   </footer>
 
-  <!-- Script for scroll-to-top arrow, fade-in/out, and sidebar hover -->
+  <!-- JavaScript for interactive functionality -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const backToTop = document.querySelector('.back-to-top');
 
-      // Show/hide scroll-to-top arrow on scroll
+      // Show/hide scroll-to-top arrow based on scroll position
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
           backToTop.classList.add('visible');
@@ -177,65 +202,68 @@
         }
       });
 
-      // Smooth scroll to top (add this handler)
+      // Smooth scroll to top when arrow is clicked
       backToTop.addEventListener('click', function (e) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      // Fade-in animation for main container
+      // Fade-in animation for main desktop container after page load
       setTimeout(() => {
         document.querySelector('.container').classList.add('loaded');
       }, 100);
 
-      // Fade-in animation for mobile about section
+      // Fade-in animation for mobile about section after page load
       setTimeout(() => {
         document.querySelector('.about-mobile')?.classList.add('loaded');
       }, 100);
 
-      // Fade-out before navigating to another page (includes .name-link)
+      // Fade-out effect before navigating to other pages for smooth transitions
       document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
         link.addEventListener('click', function (e) {
+          // Only apply fade-out for internal links
           if (this.href && this.href.indexOf(location.hostname) !== -1) {
             e.preventDefault();
             document.querySelector('.container').classList.remove('loaded');
             setTimeout(() => {
               window.location = this.href;
-            }, 400);
+            }, 400); // 400ms delay for fade-out animation
           }
         });
       });
 
-      // Sidebar/project hover effect
+      // Sidebar/project hover effect system
       document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
         const targetId = link.getAttribute('data-project');
         const listItem = document.getElementById(targetId);
 
+        // Add hover effects to corresponding sidebar items
         if (listItem) {
           link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
           link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
         }
       });
 
-      const currentPage = window.location.pathname.split('/').pop(); // Get the current page filename
+      // Active page highlighting in navigation
+      const currentPage = window.location.pathname.split('/').pop(); // Get current page filename
       const navLinks = document.querySelectorAll('.hoverable-link');
 
       navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active'); // Add the active class to the current page link
+          link.classList.add('active'); // Highlight current page link
         } else {
-          link.classList.remove('active'); // Ensure other links don't have the active class
+          link.classList.remove('active'); // Remove highlight from other links
         }
       });
 
-      // Image swap logic for both desktop and mobile
+      // Automatic image rotation for profile photos
       const photoSelectors = [
-        'main.about-page .about-photo',
-        'main.about-mobile .about-photo'
+        'main.about-page .about-photo',    // Desktop photo
+        'main.about-mobile .about-photo'   // Mobile photo
       ];
       const photoElements = photoSelectors
         .map(sel => document.querySelector(sel))
-        .filter(Boolean);
+        .filter(Boolean); // Remove null elements
 
       const images = [
         'assets/about/adrian-photo-1.webp',
@@ -243,12 +271,13 @@
       ];
       let current = 0;
 
+      // Cycle through profile images every 30 seconds
       setInterval(() => {
         current = (current + 1) % images.length;
         photoElements.forEach(img => {
           img.src = images[current];
         });
-      }, 30000); // 30 seconds
+      }, 30000); // 30 second intervals
     });
   </script>
 </body>
