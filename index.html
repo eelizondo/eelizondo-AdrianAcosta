@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic HTML5 meta information -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adrian Acosta | Designer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/global/favicon-Adrian.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" /> <!-- Main site styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /> <!-- Font Awesome icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+  <link rel="icon" type="image/png" href="assets/global/favicon-Adrian.png"> <!-- Site favicon -->
 </head>
 <body>
+  <!-- Mobile-specific elements (hidden by default with inline styles) -->
+  
   <!-- Mobile Logo on Top -->
   <div class="mobile-logo" style="display: none;">
     <img src="assets/global/logo.png" alt="Logo" />
   </div>
 
-  <!-- Mobile Header -->
+  <!-- Mobile Header with navigation -->
   <header class="mobile-header" style="display: none;">
     <nav class="mobile-nav">
       <a href="index.html" class="nav-btn">WORK</a>
@@ -24,8 +29,9 @@
     </nav>
   </header>
 
-  <!-- Mobile Gallery -->
+  <!-- Mobile Gallery (vertical stack of project images) -->
   <main class="mobile-gallery" style="display: none;">
+    <!-- Each mobile image block links to its respective project -->
     <div class="mobile-image-block">
       <a href="mazda-cx9.html">
         <img src="assets/index/image-m-1.webp" alt="Mazda CX-9 VDX" />
@@ -74,6 +80,7 @@
             <h1>ADRIAN<br>ACOSTA</h1>
           </a>
         </div>
+        
         <!-- About section -->
         <section>
           <h2>ABOUT</h2>
@@ -83,11 +90,12 @@
             </a>
           </p>
         </section>
+        
         <!-- Projects section -->
         <section>
           <h2>PROJECTS</h2>
           <ul>
-            <!-- Each project links to a page -->
+            <!-- Project links with IDs that correspond to gallery image data-project attributes -->
             <li id="cx9"><a href="mazda-cx9.html" class="hoverable-link">Mazda CX-9 VDX</a></li>
             <li id="online"><a href="mazda-online.html" class="hoverable-link">Mazda Online Advertising</a></li>
             <li id="google"><a href="google.html" class="hoverable-link">Google Small Business</a></li>
@@ -96,6 +104,7 @@
             <li id="torres"><a href="torres.html" class="hoverable-link">Torres River Friends</a></li>
           </ul>
         </section>
+        
         <!-- Photography section -->
         <section>
           <h2>PHOTOGRAPHY</h2>
@@ -104,7 +113,8 @@
           </ul>
         </section>
       </div>
-      <!-- Footer with socials -->
+      
+      <!-- Sidebar footer with functional social links -->
       <footer>
         <div class="footer-content">
           <div class="socials">
@@ -123,8 +133,9 @@
       </footer>
     </aside>
 
-    <!-- Main gallery of project images -->
+    <!-- Main gallery of project images (desktop grid layout) -->
     <main class="gallery">
+      <!-- Each gallery image has a data-project attribute that matches sidebar IDs for hover effects -->
       <a href="mazda-cx9.html" data-project="cx9">
         <img src="assets/index/image1.webp" alt="Mazda CX-9 VDX" />
       </a>
@@ -146,19 +157,20 @@
     </main>
   </div>
 
+  <!-- Spacing element for layout purposes -->
   <div style="height: 3rem;"></div>
 
-  <!-- Scroll-to-top arrow -->
+  <!-- Scroll-to-top arrow (shared between desktop and mobile) -->
   <a href="#top" class="back-to-top" aria-label="Back to top">
     <img src="assets/global/arrow-up.png" alt="Back to top" />
   </a>
 
-  <!-- Script for scroll-to-top arrow and sidebar hover -->
+  <!-- JavaScript for interactive functionality -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const backToTop = document.querySelector('.back-to-top');
 
-      // Show/hide scroll-to-top arrow on scroll
+      // Show/hide scroll-to-top arrow based on scroll position
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
           backToTop.classList.add('visible');
@@ -167,56 +179,58 @@
         }
       });
 
-      // Sidebar hover effect for gallery links
+      // Sidebar hover effect system - links gallery images to sidebar items
       const links = document.querySelectorAll('.gallery a');
       links.forEach(link => {
         const targetId = link.getAttribute('data-project');
         const listItem = document.getElementById(targetId);
 
+        // Highlight corresponding sidebar item when hovering over gallery image
         if (listItem) {
           link.addEventListener('mouseenter', () => listItem.classList.add('active-hover'));
           link.addEventListener('mouseleave', () => listItem.classList.remove('active-hover'));
         }
       });
 
-      // Fade in on first load
+      // Fade-in animation for main desktop container after page load
       setTimeout(() => {
         document.querySelector('.container').classList.add('loaded');
       }, 100);
 
-      // Fade-in animation for mobile gallery section
+      // Fade-in animation for mobile gallery section after page load
       setTimeout(() => {
         document.querySelector('.mobile-gallery')?.classList.add('loaded');
       }, 100);
 
-      // Fade out before navigating to another page
+      // Fade-out effect before navigating to other pages for smooth transitions
       document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
         link.addEventListener('click', function (e) {
-          // Only fade out for internal links
+          // Only apply fade-out for internal links
           if (this.href && this.href.indexOf(location.hostname) !== -1) {
             e.preventDefault();
             document.querySelector('.container').classList.remove('loaded');
             setTimeout(() => {
               window.location = this.href;
-            }, 400);
+            }, 400); // 400ms delay for fade-out animation
           }
         });
       });
 
-      const currentPage = window.location.pathname.split('/').pop(); // Get the current page filename
+      // Active page highlighting in navigation (for when returning to index)
+      const currentPage = window.location.pathname.split('/').pop(); // Get current page filename
       const navLinks = document.querySelectorAll('.hoverable-link');
 
       navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active'); // Add the active class to the current page link
+          link.classList.add('active'); // Highlight current page link
         } else {
-          link.classList.remove('active'); // Ensure other links don't have the active class
+          link.classList.remove('active'); // Remove highlight from other links
         }
       });
     });
   </script>
 
-  <!-- Mobile Footer -->
+  <!-- Mobile Footer with functional social links -->
   <footer class="mobile-footer">
     <div class="footer-content">
       <div class="socials">
