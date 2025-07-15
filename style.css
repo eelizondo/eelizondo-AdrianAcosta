@@ -1,23 +1,26 @@
 /* ===================================================
    1. GLOBAL RESET & BASE SETTINGS
 =================================================== */
+/* Reset all elements to remove default browser styling */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
 }
 
+/* Enable smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
   height: 100%;
 }
 
+/* Base body styling with dark theme */
 body {
   font-family: 'Open Sans', sans-serif;
-  background: #111;
-  color: #fff;
-  overflow-x: hidden;
-  min-height: 100vh;
+  background: #111; /* Dark background for portfolio theme */
+  color: #fff; /* White text for contrast */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  min-height: 100vh; /* Ensure full viewport height */
   overflow-y: auto;         /* 👈 Allows vertical scroll only when needed */
 }
 
@@ -28,98 +31,110 @@ strong {
 /* ===================================================
    2. TYPOGRAPHY & TEXT UTILITIES
 =================================================== */
+/* Base styling for hoverable navigation links */
 .hoverable-link {
-  color: #999;
+  color: #999; /* Muted gray for inactive state */
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease; /* Smooth color transition on hover */
 }
 
+/* Hover state for navigation links */
 .hoverable-link:hover {
-  color: #fff;
-  text-decoration: underline;
+  color: #fff; /* White text on hover */
+  text-decoration: underline; /* Underline for visual feedback */
 }
 
+/* Active/current page styling for navigation links */
 .hoverable-link.current,
 .hoverable-link.active {
   font-weight: bold;
-  color: #fff;
-  border-bottom: 2px solid #fff;
+  color: #fff; /* White text for active state */
+  border-bottom: 2px solid #fff; /* White border to indicate active page */
   text-decoration: none;
 }
 
+/* Focus state for accessibility */
 .hoverable-link:focus {
-  outline: 2px solid #fff;
+  outline: 2px solid #fff; /* White outline for keyboard navigation */
   outline-offset: 2px;
 }
 
 /* ===================================================
    3. LAYOUT STRUCTURE
 =================================================== */
+/* Main container using flexbox layout */
 .container {
   display: flex;
-  min-height: 100vh;
-  width: 100%; /* 👈 ADD THIS */
-  background-color: #040404;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  min-height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+  background-color: #040404; /* Darker background than body */
+  opacity: 0; /* Initially hidden for fade-in animation */
+  transition: opacity 0.4s ease; /* Smooth fade transition */
 }
 
+/* Loaded state for fade-in animation */
 .container.loaded {
   opacity: 1;
 }
 
+/* Fixed sidebar navigation */
 .sidebar {
-  width: 320px;
-  height: 100vh;
-  position: fixed;
+  width: 320px; /* Fixed width for desktop layout */
+  height: 100vh; /* Full viewport height */
+  position: fixed; /* Fixed positioning to stay in place during scroll */
   background-color: #040404;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* Space content between top and bottom */
   font-size: 13px;
   line-height: 12px;
   font-weight: 400;
   padding: 1.25rem 1.5rem;
 }
 
+/* Sidebar content wrapper */
 .sidebar-content {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.25rem; /* Consistent spacing between elements */
   padding: 1.25rem 2rem;
 }
 
 /* Add consistent spacing between sidebar sections */
 .sidebar-content section + section {
-  margin-top: 1.5rem; /* Adjust as needed for your design */
+  margin-top: 1.5rem; /* Spacing between sidebar sections */
 }
 
+/* Main project page layout (desktop) */
 .project-page {
-  margin-left: 320px;
-  padding: 5rem 2rem 6rem;
+  margin-left: 320px; /* Offset for fixed sidebar */
+  padding: 5rem 2rem 6rem; /* Top, horizontal, bottom padding */
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  width: calc(100% - 320px);
+  gap: 3rem; /* Spacing between project blocks */
+  width: calc(100% - 320px); /* Full width minus sidebar */
   flex-grow: 1;
   background-color: #040404;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
+/* Image styling within project pages */
 .project-page img {
   width: 100%;
-  max-width: 700px;
-  height: auto;
+  max-width: 700px; /* Consistent max width for readability */
+  height: auto; /* Maintain aspect ratio */
   display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-  object-fit: cover;
+  margin: 0 auto; /* Center images */
+  border-radius: 10px; /* Rounded corners */
+  object-fit: cover; /* Maintain aspect ratio while covering container */
 }
 
+/* Larger first image in project blocks */
 .project-page .project-block:first-of-type img {
-  max-width: 900px; /* Or any desired size */
+  max-width: 900px; /* Larger hero images */
 }
 
+/* Gallery image styling */
 .gallery img {
   width: 100%;
   max-width: 700px;
@@ -128,119 +143,135 @@ strong {
   display: block;
 }
 
+/* Gallery layout (homepage) */
 .gallery {
-  margin-left: 320px;
+  margin-left: 320px; /* Offset for fixed sidebar */
   padding: 5rem 2rem 6rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* Adjust as needed for more/less space */
-  width: calc(100% - 320px);
+  gap: 2rem; /* Spacing between gallery items */
+  width: calc(100% - 320px); /* Full width minus sidebar */
   flex-grow: 1;
   background-color: #040404;
 }
 
+/* Gallery link and div elements */
 .gallery a,
 .gallery div {
   display: block;
   width: 100%;
   max-width: 700px;
-  margin-bottom: 0; /* Remove any extra margin if present */
+  margin-bottom: 0; /* Remove default margin */
 }
 
+/* Gallery link spacing */
 .gallery a {
   display: block;
-  margin-bottom: 2rem; /* Adjust as needed */
+  margin-bottom: 2rem; /* Consistent spacing between gallery items */
 }
 .gallery a:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0; /* Remove margin from last item */
 }
 
 /* ===================================================
    4. SIDEBAR ELEMENTS
 =================================================== */
+/* Name banner/logo styling */
 .name-banner {
   text-align: left;
-  margin-top: 2rem;      /* ✅ Add this */
+  margin-top: 2rem; /* Top spacing for visual balance */
   margin-bottom: 1rem;
   line-height: 1;
 }
 
+/* Main name/title styling */
 .name-banner h1 {
   font-size: 2.5rem;
-  font-weight: 900;
+  font-weight: 900; /* Extra bold for emphasis */
   color: #eee;
-  line-height: 1.1;
+  line-height: 1.1; /* Tight line height for impact */
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.5px; /* Slight letter spacing for elegance */
 }
 
+/* Sidebar section headings */
 .sidebar h2 {
   font-size: 1rem;
   font-weight: 700;
   color: #fff;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.5px; /* Spaced out for section headers */
   margin: 0.4rem 0;
   text-transform: uppercase;
 }
 
+/* Default sidebar text styling */
 .sidebar p,
 .sidebar ul li {
-  color: #999;
-  line-height: 1.9;
-  transition: all 0.2s ease;
+  color: #999; /* Muted gray for secondary text */
+  line-height: 1.9; /* Generous line height for readability */
+  transition: all 0.2s ease; /* Smooth transitions for hover effects */
 }
 
+/* Paragraph spacing in sidebar sections */
 .sidebar section p {
   margin-bottom: 0.1rem;
 }
 
+/* Remove default list styling */
 .sidebar ul {
   list-style: none;
   padding-left: 0;
 }
 
+/* Hover effect for sidebar project links */
 .sidebar ul li.active-hover {
-  color: #fff;
+  color: #fff; /* White text on hover */
   font-weight: 600;
-  text-decoration: underline;
+  text-decoration: underline; /* Visual feedback for hover state */
 }
 
 /* ===================================================
    5. FOOTER
 =================================================== */
+/* Social media links container */
 .socials {
   display: flex;
   justify-content: flex-start;
-  gap: 16px;
+  gap: 16px; /* Consistent spacing between social icons */
 }
 
+/* Social media link styling */
 .socials a {
   color: #fff;
   font-size: 1.25rem;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease; /* Scale animation on hover */
 }
 
+/* Hover effect for social links */
 .socials a:hover {
-  transform: scale(1.15);
+  transform: scale(1.15); /* Slight scale increase for feedback */
 }
 
+/* Focus state for accessibility */
 .socials a:focus {
   outline: 2px solid #fff;
-  outline-offset: 4px;
+  outline-offset: 4px; /* Offset for better visibility */
 }
 
+/* Footer content layout */
 .footer-content {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1rem; /* Spacing between footer elements */
   padding-left: 2rem;
 }
 
+/* Copyright text styling */
 footer .copyright {
   text-align: left;
   font-size: 0.75rem;
-  letter-spacing: 3px;
-  color: #888;
+  letter-spacing: 3px; /* Wide letter spacing for stylistic effect */
+  color: #888; /* Muted color for copyright text */
 }
 
 /* ===================================================
@@ -348,88 +379,98 @@ footer .copyright {
 /* ===================================================
    8. PROJECT PAGE STYLING
 =================================================== */
+/* Horizontal divider between project sections */
 .section-divider {
   width: 60%;
   max-width: 900px;
   height: 1px;
-  background-color: #444;
+  background-color: #444; /* Subtle gray divider */
   border: none;
-  margin: 2rem 0;
+  margin: 2rem 0; /* Vertical spacing around dividers */
 }
 
+/* Scroll-to-top button (initially hidden) */
 .back-to-top {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  z-index: 1000;
-  opacity: 0;
+  z-index: 1000; /* Above all other content */
+  opacity: 0; /* Initially invisible */
   visibility: hidden;
-  pointer-events: none;
+  pointer-events: none; /* Prevent interaction when hidden */
   transition: opacity 0.4s ease, visibility 0.4s ease;
   background-color: transparent;
 }
 
+/* Visible state for scroll-to-top button */
 .back-to-top.visible {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto;
+  pointer-events: auto; /* Allow interaction when visible */
 }
 
+/* Scroll-to-top button image styling */
 .back-to-top img {
   width: 36px;
   height: 36px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease; /* Scale animation on hover */
 }
 
+/* Hover effect for scroll-to-top button */
 .back-to-top img:hover {
-  transform: scale(1.2);
+  transform: scale(1.2); /* Slight scale increase */
 }
 
+/* Focus state for accessibility */
 .back-to-top img:focus {
   outline: 2px solid #fff;
   outline-offset: 4px;
 }
 
+/* Name link styling (for logo/name in header) */
 .name-link {
   text-decoration: none;
-  color: inherit;
+  color: inherit; /* Inherit parent color */
   display: inline-block;
 }
 
+/* Project block container */
 .project-block {
-  margin-bottom: 60px;
-  max-width: 700px;
+  margin-bottom: 60px; /* Consistent spacing between project sections */
+  max-width: 700px; /* Readable content width */
   width: 100%;
   margin-left: 0;
   margin-right: 0;
 }
 
-
+/* Project block image styling */
 .project-block img {
   width: 100%;
   max-width: 600px;
   display: block;
-  margin: 0 0 12px 0;
+  margin: 0 0 12px 0; /* Bottom margin for spacing */
   border-radius: 10px;
 }
 
-
+/* Image caption styling */
 .image-caption {
   font-size: 12px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.15em; /* Spaced out for elegance */
   text-transform: uppercase;
-  color: #ccc;
+  color: #ccc; /* Light gray for secondary text */
   max-width: 700px;
   margin-top: 0.75rem;
   margin-bottom: 2rem;
   text-align: left;
 }
 
+/* Project text content wrapper */
 .project-text {
-  max-width: 700px;
+  max-width: 700px; /* Consistent readable width */
 }
 
+/* Project title styling */
 .project-title {
   font-size: 1.4rem;
   font-weight: 700;
@@ -439,22 +480,25 @@ footer .copyright {
   margin-bottom: 0.25rem;
 }
 
+/* Project role/subtitle styling */
 .project-role {
   font-size: 0.85rem;
-  color: #888;
+  color: #888; /* Muted color for secondary information */
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1.25rem;
 }
 
+/* Project description text styling */
 .project-description {
   font-size: 1rem;
-  color: #ddd;
-  line-height: 1.8;
+  color: #ddd; /* Light gray for readability */
+  line-height: 1.8; /* Generous line height for reading */
 }
 
+/* Special styling for intro project blocks */
 .project-block.intro img {
-  max-width: 50%;
+  max-width: 50%; /* Smaller intro images */
 }
 
 /* ===================================================
@@ -636,29 +680,39 @@ h3 {
   }
 }
 
+/* ===================================================
+   RESPONSIVE DESIGN - MOBILE BREAKPOINTS
+=================================================== */
+
+/* Mobile breakpoint: Hide desktop sidebar, show mobile elements */
 @media (max-width: 700px) {
+  /* Hide desktop sidebar on mobile */
   .sidebar {
     display: none !important;
   }
+  /* Reset project page layout for mobile */
   .project-page,
   .about-page,
   .gallery {
-    margin-left: 0 !important;
-    width: 100% !important;
-    padding: 0 !important;
+    margin-left: 0 !important; /* Remove sidebar offset */
+    width: 100% !important; /* Full width on mobile */
+    padding: 0 !important; /* Remove desktop padding */
   }
+  /* Show mobile-specific elements */
   .mobile-header,
   .mobile-gallery {
     display: flex !important;
   }
+  /* Hide desktop container on mobile */
   .container {
     display: none !important;
   }
+  /* Mobile scroll-to-top positioning */
   .back-to-top {
     position: fixed;
-    left: 50%;
-    bottom: 7rem; /* Increased from 6.5rem to 9rem */
-    transform: translateX(-50%);
+    left: 50%; /* Center horizontally */
+    bottom: 7rem; /* Position above mobile footer */
+    transform: translateX(-50%); /* Center using transform */
     z-index: 1000;
     width: 56px;
     height: 56px;
@@ -675,6 +729,7 @@ h3 {
     height: 100%;
     display: block;
   }
+  /* Mobile logo positioning */
   .logo {
     margin-left: 40px;
   }
@@ -771,28 +826,35 @@ h3 {
   }
 }
 
+/* ===================================================
+   BACKGROUND COLOR CONSISTENCY
+=================================================== */
+/* Ensure consistent dark background across all elements */
 html,
 body {
-  background: #040404 !important;
+  background: #040404 !important; /* Force dark background */
 }
 .container {
   background-color: #040404 !important;
 }
 
+/* Mobile background consistency */
 @media (max-width: 700px) {
   body,
   .mobile-header,
   .mobile-gallery,
   .mobile-footer {
-    background: #040404 !important;
+    background: #040404 !important; /* Consistent dark theme on mobile */
   }
+  /* Mobile gallery layout */
   .mobile-gallery {
     display: flex !important;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2rem; /* Consistent spacing between gallery items */
     padding: 1rem;
     align-items: center; /* Center gallery items horizontally */
   }
+  /* Mobile logo positioning */
   .mobile-logo {
     display: flex !important;
     justify-content: center;
@@ -804,25 +866,34 @@ body {
   .mobile-logo img {
     display: block;
     margin: 0 auto;
-    max-width: 120px;
+    max-width: 120px; /* Responsive logo size */
     height: auto;
   }
+  /* Hide desktop logo on mobile */
   .mobile-header .logo {
     display: none !important;
   }
 }
 
+/* ===================================================
+   MOBILE NAVIGATION
+=================================================== */
+/* Center mobile navigation */
 @media (max-width: 700px) {
   .mobile-nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.5rem; /* Spacing between navigation buttons */
     width: 100%;
     margin: 0 auto;
   }
 }
 
+/* ===================================================
+   DESKTOP vs MOBILE DISPLAY CONTROL
+=================================================== */
+/* Hide mobile elements on desktop by default */
 @media (max-width: 700px) {
   .container {
     display: none !important;
@@ -831,11 +902,14 @@ body {
     display: block !important;
   }
 }
+/* Show desktop elements above mobile breakpoint */
 @media (min-width: 701px) {
   .about-mobile {
     display: none !important;
   }
 }
+
+/* Mobile about page styling */
 @media (max-width: 700px) {
   .about-mobile {
     display: block !important;
@@ -848,17 +922,19 @@ body {
     align-items: center;
     text-align: center;
   }
+  /* Mobile about photo styling */
   .about-mobile .about-photo {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 50%; /* Circular profile photo */
     margin: 0 auto 2rem auto;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25); /* Subtle shadow */
     display: block;
   }
+  /* Mobile about text styling */
   .about-mobile .about-text {
-    max-width: 400px;
+    max-width: 400px; /* Readable width on mobile */
     margin: 0 auto 2rem auto;
     font-size: 1.1rem;
     color: #fff;
@@ -873,9 +949,10 @@ body {
   .about-mobile .about-text p {
     margin-bottom: 1.5rem;
     font-size: 1.05rem;
-    line-height: 1.6;
+    line-height: 1.6; /* Readable line height */
     color: #ccc;
   }
+  /* Mobile resume download button */
   .about-mobile .download-resume {
     display: inline-block;
     margin-top: 1.5rem;
@@ -890,8 +967,9 @@ body {
     transition: color 0.2s;
   }
   .about-mobile .download-resume:hover {
-    color: #b3b3b3;
+    color: #b3b3b3; /* Subtle hover effect */
   }
+  /* Mobile footer styling */
   .mobile-footer .footer-content {
     display: flex;
     flex-direction: column;
@@ -966,19 +1044,22 @@ body {
   }
 }
 
-/* Force videos to stay in a row on all screens */
+/* ===================================================
+   VIDEO LAYOUT - FORCE HORIZONTAL ON MOBILE
+=================================================== */
+/* Keep videos in horizontal row even on small screens */
 @media (max-width: 700px) {
   .video-row {
-    flex-direction: row !important;
+    flex-direction: row !important; /* Force horizontal layout */
     justify-content: center;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.5rem; /* Tight spacing for small screens */
   }
   .video-row video {
-    width: 32vw;
-    max-width: 110px;
-    min-width: 80px;
-    height: 180px;
+    width: 32vw; /* Responsive width based on viewport */
+    max-width: 110px; /* Maximum size constraint */
+    min-width: 80px; /* Minimum size constraint */
+    height: 180px; /* Fixed height for consistency */
   }
 }
 
@@ -1106,23 +1187,44 @@ body {
   opacity: 1;
 }
 
-/* Carousel styles */
+/* ===================================================
+   CAROUSEL COMPONENT STYLING
+=================================================== */
+/* Fade-in animations for mobile sections */
+.about-mobile {
+  opacity: 0;
+  transition: opacity 0.4s ease; /* Smooth fade-in */
+}
+.about-mobile.loaded {
+  opacity: 1;
+}
+
+.project-mobile {
+  opacity: 0;
+  transition: opacity 0.4s ease; /* Smooth fade-in */
+}
+.project-mobile.loaded {
+  opacity: 1;
+}
+
+/* Image carousel container */
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 100%;      /* Allow full width */
+  max-width: 100%; /* Allow full width responsiveness */
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #181818;
+  background: #181818; /* Dark background for carousel */
   border-radius: 12px;
-  overflow: hidden;
+  overflow: hidden; /* Hide overflow for clean edges */
 }
 
+/* Individual carousel images (initially hidden) */
 .carousel-image {
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease; /* Smooth fade transition between images */
   position: absolute;
   left: 0;
   top: 0;
@@ -1130,93 +1232,99 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  object-fit: cover;
+  object-fit: cover; /* Maintain aspect ratio */
   display: block;
   z-index: 1;
-  pointer-events: none;
+  pointer-events: none; /* Prevent interaction with hidden images */
 }
 
+/* Active/visible carousel image */
 .carousel-image.active {
   opacity: 1;
-  z-index: 2;
-  pointer-events: auto;
+  z-index: 2; /* Above other images */
+  pointer-events: auto; /* Allow interaction */
   position: relative;
 }
 
+/* Fading out carousel image */
 .carousel-image.fading {
   opacity: 0 !important;
   transition: opacity 0.5s ease;
 }
 
+/* Carousel navigation buttons */
 .carousel-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  background: none;           /* Remove background */
+  transform: translateY(-50%); /* Center vertically */
+  background: none; /* Transparent background */
   border: none;
   color: #fff;
   font-size: 2rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  z-index: 2;
-  border-radius: 0;           /* Remove circle */
+  z-index: 2; /* Above images */
+  border-radius: 0; /* Sharp corners */
   transition: background 0.2s;
-  box-shadow: none;           /* Remove any shadow */
+  box-shadow: none; /* Clean appearance */
 }
 
+/* Position carousel buttons */
 .carousel-btn.prev { left: 16px; }
 .carousel-btn.next { right: 16px; }
 
+/* Focus state for accessibility */
 .carousel-btn:focus {
   outline: 2px solid #fff;
 }
 
+/* Carousel caption styling */
 .carousel-caption {
-  text-align: left; /* Align text to the left */
+  text-align: left;
   color: #ccc; /* Light gray font color */
-  font-size: 12px; /* Match the font size */
-  font-weight: 400; /* Normal font weight */
-  font-family: 'Open Sans', sans-serif; /* Font family */
-  letter-spacing: 0.15em; /* Slightly spaced out */
-  text-transform: uppercase; /* Transform text to uppercase */
-  line-height: 1.4; /* Better readability */
-  margin-top: 0.75rem; /* Adjust top margin */
-  margin-bottom: 2rem; /* Adjust bottom margin */
-  background-color: transparent; /* Remove background */
-  padding: 0; /* Remove padding */
+  font-size: 12px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.15em; /* Spaced out text */
+  text-transform: uppercase;
+  line-height: 1.4;
+  margin-top: 0.75rem;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  padding: 0;
   position: absolute;
-  bottom: 10px; /* Position at the bottom of the slide */
+  bottom: 10px; /* Position at bottom of carousel */
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+  transform: translateX(-50%); /* Center horizontally */
+  z-index: 10; /* Above all carousel content */
 }
 
-/* Optional: Make the carousel section edge-to-edge */
+/* Make carousel edge-to-edge (optional styling) */
 .project-block .carousel {
   margin-left: -2rem;
   margin-right: -2rem;
-  width: calc(100% + 4rem);
+  width: calc(100% + 4rem); /* Extend beyond container */
   max-width: none;
 }
 
-/* Optimize carousel for mobile view */
+/* Mobile carousel optimizations */
 @media (max-width: 768px) {
   .carousel {
-    width: 90%; /* Adjust width for mobile screens */
-    max-width: 320px; /* Set a maximum width */
+    width: 90%; /* Responsive width for mobile */
+    max-width: 320px; /* Maximum width constraint */
     margin: 0 auto; /* Center the carousel */
-    border-radius: 8px; /* Slightly reduce border radius */
+    border-radius: 8px; /* Slightly smaller border radius */
   }
 
   .carousel-image {
-    width: 100%; /* Ensure images fit the carousel */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: auto;
     border-radius: 8px; /* Match carousel border radius */
   }
 
   .carousel-btn {
-    font-size: 1.5rem; /* Reduce button size for mobile */
-    padding: 0.3rem; /* Adjust padding for smaller buttons */
+    font-size: 1.5rem; /* Smaller buttons for mobile */
+    padding: 0.3rem; /* Reduced padding */
     z-index: 10; /* Ensure buttons are above images */
   }
 }
