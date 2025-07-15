@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic HTML5 meta information -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mazda Online Advertising | Adrian Acosta</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/global/favicon-Adrian.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" /> <!-- Main site styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /> <!-- Font Awesome icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+  <link rel="icon" type="image/png" href="assets/global/favicon-Adrian.png"> <!-- Site favicon -->
 </head>
 <body>
+  <!-- Anchor point for scroll-to-top functionality -->
   <div id="top"></div>
 
   <!-- Main container for sidebar and project content -->
@@ -23,7 +27,7 @@
             <h1>ADRIAN<br>ACOSTA</h1>
           </a>
         </div>
-        <!-- About section -->
+        <!-- About section with link to about page -->
         <section>
           <h2>ABOUT</h2>
           <p id="about">
@@ -32,11 +36,12 @@
             </a>
           </p>
         </section>
-        <!-- Projects section -->
+        
+        <!-- Projects navigation section -->
         <section>
           <h2>PROJECTS</h2>
           <ul>
-            <!-- Each project links to a page; current page is highlighted -->
+            <!-- Project links with IDs for hover effects -->
             <li id="cx9"><a href="mazda-cx9.html" class="hoverable-link">Mazda CX-9 VDX</a></li>
             <li id="online"><a href="mazda-online.html" class="hoverable-link">Mazda Online Advertising</a></li>
             <li id="google"><a href="google.html" class="hoverable-link">Google Small Business</a></li>
@@ -45,7 +50,8 @@
             <li id="torres"><a href="torres.html" class="hoverable-link">Torres River Friends</a></li>
           </ul>
         </section>
-        <!-- Photography section -->
+        
+        <!-- Photography navigation section -->
         <section>
           <h2>PHOTOGRAPHY</h2>
           <ul>
@@ -53,7 +59,7 @@
           </ul>
         </section>
       </div>
-      <!-- Footer with socials -->
+      <!-- Footer with socials and copyright -->
       <footer>
         <div class="footer-content">
           <div class="socials">
@@ -66,51 +72,53 @@
       </footer>
     </aside>
 
-    <!-- Main project content -->
+    <!-- Main project content - Desktop layout -->
     <main class="project-page">
-      <!-- Project sections with images and captions -->
-      <!-- Image: Mazda MX-5 -->
+      <!-- Hero section with video showcase and project overview -->
       <section class="project-block">
+        <!-- Triple video display for MX-5 advertising campaign -->
         <div class="video-row">
           <video src="assets/mazda-online/mx5-ad-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
           <video src="assets/mazda-online/mx5-ad-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
           <video src="assets/mazda-online/mx5-ad-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
         </div>
         <p class="image-caption">2020 MAZDA MX-5 MIATA RF • ONLINE ADVERTISING</p>
+        
+        <!-- Project information and description -->
         <div class="project-text">
           <h2 class="project-title">MAZDA ONLINE ADVERTISING</h2>
           <p class="project-role">ROLE: CREATIVE, DIGITAL DESIGN</p>
           <p class="project-description">
-            Throughout the year, I partnered with Garage Team Mazda on various online ad campaigns aimed at crafting visually appealing content to effectively communicate the brand’s message to its online audience.<br /><br />
-            As a creative graphic designer, my role involved creating and editing content that not only captured viewers’ attention but also conveyed the brand’s values and drove conversions.
+            Throughout the year, I partnered with Garage Team Mazda on various online ad campaigns aimed at crafting visually appealing content to effectively communicate the brand's message to its online audience.<br /><br />
+            As a creative graphic designer, my role involved creating and editing content that not only captured viewers' attention but also conveyed the brand's values and drove conversions.
           </p>
         </div>
       </section>
 
-      <!-- Large Hero Image -->
+      <!-- Large hero image showcase section -->
       <section class="project-block">
         <img src="assets/mazda-online/mx5-hero.webp" alt="Mazda MX-5 Hero Image" />
         <p class="image-caption">2020 MAZDA MX-5 MIATA RF • ONLINE ADVERTISING</p>
       </section>
 
-      <!-- Image: Mazda CX-3 -->
+      <!-- CX-3 advertising campaign showcase -->
       <section class="project-block">
         <img src="assets/mazda-online/cx3-ad-1.webp" alt="Mazda CX-3" />
         <p class="image-caption">2020 MAZDA MX-3 SPORT FWD • ONLINE ADVERTISING</p>
       </section>
 
-      <!-- Image: Mazda2 Sport -->
+      <!-- Mazda2 advertising campaign showcase -->
       <section class="project-block">
         <img src="assets/mazda-online/mazda2-ad-1.webp" alt="Mazda2" />
         <p class="image-caption">2020 MAZDA2 SPORT FWD • ONLINE ADVERTISING</p>
       </section>
 
-      <!-- Script for scroll-to-top arrow and sidebar hover -->
+      <!-- JavaScript for interactive functionality -->
       <script>
         document.addEventListener('DOMContentLoaded', function () {
           const backToTop = document.querySelector('.back-to-top');
 
-          // Show/hide scroll-to-top arrow on scroll
+          // Show/hide scroll-to-top arrow based on scroll position
           window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
               backToTop.classList.add('visible');
@@ -119,13 +127,13 @@
             }
           });
 
-          // Smooth scroll to top
+          // Smooth scroll to top functionality
           backToTop.addEventListener('click', function (e) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
           });
 
-          // Fade-in animation for main container
+          // Fade-in animation for main desktop container
           setTimeout(() => {
             document.querySelector('.container').classList.add('loaded');
           }, 100);
@@ -135,7 +143,7 @@
             document.querySelector('.project-mobile')?.classList.add('loaded');
           }, 100);
 
-          // Fade-out before navigating to another page
+          // Smooth fade-out transition before navigating to another page
           document.querySelectorAll('a.hoverable-link, .gallery a, a.name-link').forEach(link => {
             link.addEventListener('click', function (e) {
               if (this.href && this.href.indexOf(location.hostname) !== -1) {
@@ -148,7 +156,7 @@
             });
           });
 
-          // Sidebar/project hover effect
+          // Sidebar/project hover effect - highlights corresponding project in sidebar
           document.querySelectorAll('.hoverable-link, .gallery a').forEach(link => {
             const targetId = link.getAttribute('data-project');
             const listItem = document.getElementById(targetId);
@@ -163,12 +171,14 @@
     </main>
   </div>
 
+  <!-- Mobile-specific elements -->
+  
   <!-- Mobile Logo on Top -->
   <div class="mobile-logo">
     <img src="assets/global/logo.png" alt="Logo" />
   </div>
 
-  <!-- Mobile Header -->
+  <!-- Mobile Header with navigation -->
   <header class="mobile-header">
     <nav class="mobile-nav">
       <a href="index.html" class="nav-btn">WORK</a>
@@ -177,46 +187,54 @@
     </nav>
   </header>
 
+  <!-- Mobile project content layout -->
   <main class="project-mobile">
+    <!-- Mobile hero section with video showcase -->
     <section class="project-block">
+      <!-- Triple video display for mobile MX-5 advertising campaign -->
       <div class="video-row">
         <video src="assets/mazda-online/mx5-ad-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
         <video src="assets/mazda-online/mx5-ad-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
         <video src="assets/mazda-online/mx5-ad-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
       </div>
       <p class="image-caption">2020 MAZDA MX-5 MIATA RF ONLINE ADVERTISING</p>
+      
+      <!-- Mobile project information and description -->
       <div class="project-text" style="text-align: left; max-width: 700px; margin: 2.75rem auto 0 auto;">
         <h2 class="project-title" style="margin-bottom: 0.25rem; font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase;">MAZDA ONLINE ADVERTISING</h2>
         <p class="project-role" style="margin-bottom: 1.25rem; color: #aaa; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase;">ROLE: CREATIVE, DIGITAL DESIGN</p>
         <p class="project-description" style="color: #ddd; line-height: 1.8;">
-          Throughout the year, I partnered with Garage Team Mazda on various online ad campaigns aimed at crafting visually appealing content to effectively communicate the brand’s message to its online audience.<br /><br />
-          As a creative graphic designer, my role involved creating and editing content that not only captured viewers’ attention but also conveyed the brand’s values and drove conversions.
+          Throughout the year, I partnered with Garage Team Mazda on various online ad campaigns aimed at crafting visually appealing content to effectively communicate the brand's message to its online audience.<br /><br />
+          As a creative graphic designer, my role involved creating and editing content that not only captured viewers' attention but also conveyed the brand's values and drove conversions.
         </p>
       </div>
     </section>
 
+    <!-- Mobile hero image showcase section -->
     <section class="project-block">
       <img src="assets/mazda-online/mx5-hero.webp" alt="Mazda MX-5 Hero Image" style="width:100%; border-radius:12px; margin-bottom:1rem;" />
       <p class="image-caption">2020 MAZDA MX-5 MIATA RF ONLINE ADVERTISING</p>
     </section>
 
+    <!-- Mobile CX-3 advertising showcase -->
     <section class="project-block">
       <img src="assets/mazda-online/cx3-ad-1.webp" alt="Mazda CX-3" style="width:100%; border-radius:12px; margin-bottom:1rem;" />
       <p class="image-caption">2020 MAZDA MX-3 SPORT FWD - ONLINE ADVERTISING</p>
     </section>
 
+    <!-- Mobile Mazda2 advertising showcase -->
     <section class="project-block">
       <img src="assets/mazda-online/mazda2-ad-1.webp" alt="Mazda2" style="width:100%; border-radius:12px; margin-bottom:1rem;" />
       <p class="image-caption">2020 MAZDA2 SPORT FWD - ONLINE ADVERTISING</p>
     </section>
   </main>
 
-  <!-- After all main content (desktop and mobile) -->
+  <!-- Scroll-to-top arrow for both desktop and mobile -->
   <a href="#top" class="back-to-top" aria-label="Back to top">
     <img src="assets/global/arrow-up.png" alt="Back to top" />
   </a>
 
-  <!-- Mobile Footer -->
+  <!-- Mobile Footer with functional social links -->
   <footer class="mobile-footer">
     <div class="footer-content">
       <div class="socials">
@@ -234,12 +252,12 @@
     </div>
   </footer>
 
-  <!-- Mobile Show/hide scroll-to-top arrow on scroll -->
+  <!-- Additional JavaScript for scroll-to-top functionality -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const backToTop = document.querySelector('.back-to-top');
 
-      // Show/hide scroll-to-top arrow on scroll
+      // Show/hide scroll-to-top arrow based on scroll position
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
           backToTop.classList.add('visible');
@@ -248,7 +266,7 @@
         }
       });
 
-      // Smooth scroll to top
+      // Smooth scroll to top functionality
       backToTop.addEventListener('click', function (e) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -256,8 +274,10 @@
     });
   </script>
 
+  <!-- JavaScript for current page highlighting -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      // Highlight current page in navigation
       const currentPage = window.location.pathname.split('/').pop(); // Get the current page filename
       const navLinks = document.querySelectorAll('.hoverable-link');
 
