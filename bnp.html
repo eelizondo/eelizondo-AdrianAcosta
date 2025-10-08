@@ -107,17 +107,17 @@
         
         <!-- Swiper carousel showcasing drivetrain illustrations -->
         <section class="project-block">
-          <swiper-container class="mySwiper" navigation="true">
+          <swiper-container class="mySwiper" navigation="true" loop="true">
             <swiper-slide>
-              <img src="assets/bnp/carousel/bnp-carousel-1.jpg" alt="Mazda CX-30 Carousel 1" />
+              <img src="assets/bnp/Carousel/bnp-carousel-1.jpg" alt="Mazda CX-30 Carousel 1" />
               <div class="carousel-caption">DRIVETRAIN ILLUSTRATION</div>
             </swiper-slide>
             <swiper-slide>
-              <img src="assets/bnp/carousel/bnp-carousel-2.jpg" alt="Mazda CX-30 Carousel 2" />
+              <img src="assets/bnp/Carousel/bnp-carousel-2.jpg" alt="Mazda CX-30 Carousel 2" />
               <div class="carousel-caption">VANISH POINT GUIDE</div>
             </swiper-slide>
             <swiper-slide>
-              <img src="assets/bnp/carousel/bnp-carousel-3.jpg" alt="Mazda CX-30 Carousel 3" />
+              <img src="assets/bnp/Carousel/bnp-carousel-3.jpg" alt="Mazda CX-30 Carousel 3" />
               <div class="carousel-caption">2020 MAZDA CX-30</div>
             </swiper-slide>
           </swiper-container>
@@ -170,17 +170,17 @@
       </section>
       <!-- Mobile Swiper carousel for drivetrain illustrations -->
       <section class="project-block">
-        <swiper-container class="mySwiper" navigation="true">
+        <swiper-container class="mySwiper" navigation="true" loop="true">
           <swiper-slide>
-      <img src="assets/bnp/carousel/bnp-carousel-1.jpg" alt="Mazda CX-30 Carousel 1" />
+      <img src="assets/bnp/Carousel/bnp-carousel-1.jpg" alt="Mazda CX-30 Carousel 1" />
       <div class="carousel-caption">DRIVETRAIN ILLUSTRATION</div>
     </swiper-slide>
     <swiper-slide>
-      <img src="assets/bnp/carousel/bnp-carousel-2.jpg" alt="Mazda CX-30 Carousel 2" />
+      <img src="assets/bnp/Carousel/bnp-carousel-2.jpg" alt="Mazda CX-30 Carousel 2" />
       <div class="carousel-caption">VANISH POINT GUIDE</div>
     </swiper-slide>
     <swiper-slide>
-      <img src="assets/bnp/carousel/bnp-carousel-3.jpg" alt="Mazda CX-30 Carousel 3" />
+      <img src="assets/bnp/Carousel/bnp-carousel-3.jpg" alt="Mazda CX-30 Carousel 3" />
       <div class="carousel-caption">2020 MAZDA CX-30</div>
     </swiper-slide>
   </swiper-container>
@@ -308,28 +308,8 @@
         showImage(current);
       });
 
-      // Initialize Swiper carousel for modern carousel implementation
-      const swiper = new Swiper('.mySwiper', {
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        loop: true, // Enable infinite loop
-        on: {
-          // Handle caption visibility on slide change
-          slideChange: function () {
-            const slides = document.querySelectorAll('.swiper-slide');
-            slides.forEach((slide, index) => {
-              const caption = slide.querySelector('.carousel-caption');
-              if (index === this.activeIndex) {
-                caption.style.display = 'block';
-              } else {
-                caption.style.display = 'none';
-              }
-            });
-          },
-        },
-      });
+      // Initialize Swiper carousel for modern carousel implementation (handled by web components)
+      // Web components automatically handle navigation and loop functionality
     });
   </script>
 </body>
