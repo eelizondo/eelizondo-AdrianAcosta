@@ -121,7 +121,7 @@ strong {
 /* Image styling within project pages */
 .project-page img {
   width: 100%;
-  max-width: 700px; /* Consistent max width for readability */
+  max-width: 900px; /* Consistent max width matching hero images */
   height: auto; /* Maintain aspect ratio */
   display: block;
   margin: 0 auto; /* Center images */
@@ -132,6 +132,17 @@ strong {
 /* Larger first image in project blocks */
 .project-page .project-block:first-of-type img {
   max-width: 900px; /* Larger hero images */
+}
+
+/* Iframe styling within project pages to match image width */
+.project-page iframe {
+  max-width: 900px; /* Match image max-width */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 970 / 546; /* Maintain original 970:546 aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center iframe like images */
+  border-radius: 10px; /* Match image border radius */
 }
 
 /* Gallery image styling */
@@ -447,7 +458,7 @@ footer .copyright {
 /* Project block image styling */
 .project-block img {
   width: 100%;
-  max-width: 600px;
+  max-width: 900px; /* Match project page image width */
   display: block;
   margin: 0 0 12px 0; /* Bottom margin for spacing */
   border-radius: 10px;
