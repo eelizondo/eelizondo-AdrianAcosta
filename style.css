@@ -586,12 +586,12 @@ figcaption {
 .project-page .video-row {
   display: flex;
   gap: 1rem;
-  justify-content: flex-end;
-  margin-bottom: 1.5rem;
+  justify-content: flex-end; /* Back to original right/end alignment */
+  margin-bottom: 1.5rem; /* Back to original margin */
 }
 .project-page .video-row video {
   width: 100%;
-  max-width: 320px;
+  max-width: 220px; /* Smaller than original 320px */
   border-radius: 12px;
   background: #000;
 }
