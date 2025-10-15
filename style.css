@@ -464,6 +464,15 @@ footer .copyright {
   border-radius: 5px; /* Subtle rounded corners */
 }
 
+/* Project block video styling - match image styling */
+.project-block video {
+  width: 100%;
+  max-width: 900px; /* Match project page image width */
+  display: block;
+  margin: 0 auto 12px auto; /* Center and add bottom margin */
+  border-radius: 5px; /* Match image border radius */
+}
+
 /* Image caption styling */
 .image-caption {
   font-size: 12px;
